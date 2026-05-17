@@ -1,0 +1,1560 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Blaze Winter Engine 2026-2027 — CrossFit Blaze Programming</title><style>
+:root{--bg:#f6f7fb;--paper:#fff;--ink:#111827;--muted:#64748b;--line:#e2e8f0;--blue:#0071e3;--soft:#f8fafc;--shadow:0 12px 32px rgba(15,23,42,.10)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;font-size:17px}.site-header{position:relative;z-index:50;background:linear-gradient(135deg,#0f172a,#1e293b);color:white;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 8px 28px rgba(15,23,42,.25)}.header-inner{padding:14px 14px 10px;max-width:1120px;margin:0 auto}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.72;font-weight:800}.site-header h1{font-size:22px;line-height:1.05;margin:5px 0 6px;letter-spacing:-.045em}.site-header p{font-size:13px;line-height:1.35;margin:0;color:#cbd5e1}.cycle-tabs{display:grid;grid-template-columns:1fr;gap:9px;padding:14px 0 4px;margin:0}.cycle-tab{display:block;width:100%;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.10);color:white;text-decoration:none;border-radius:16px;padding:14px 13px;font-size:16px;font-weight:900;line-height:1.15}.cycle-tab.active{background:white;color:#0f172a;border-color:white}.wrap{max-width:1120px;margin:0 auto;padding:14px 12px 72px}.notice{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:18px;padding:13px 14px;margin:12px 0;font-size:14px}.cycle{background:var(--paper);border:1px solid var(--line);border-radius:22px;margin:16px 0 28px;box-shadow:var(--shadow);overflow:hidden}.cycle-hero{background:linear-gradient(180deg,#fff,#f8fbff);padding:22px 16px;border-bottom:1px solid var(--line)}.cycle-hero h2{font-size:28px;line-height:1.03;margin:0 0 12px;letter-spacing:-.055em}.meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.meta{background:white;border:1px solid var(--line);border-radius:14px;padding:10px 11px}.meta-label{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:900}.meta-value{display:block;font-size:14px;font-weight:800;color:#0f172a;margin-top:2px}.status-note{border-radius:16px;padding:12px 13px;margin-top:12px;font-size:14px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}.status-note.complete{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}.jump-list{display:flex;gap:8px;overflow-x:auto;margin:13px -16px 0;padding:0 16px 4px}.jump-list a{flex:0 0 auto;text-decoration:none;color:#0f172a;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:8px 10px;font-size:13px;font-weight:800}.cycle-body{padding:8px 12px 22px}.content h1{font-size:25px;line-height:1.08;margin:24px 0 12px;padding:14px 12px;border-radius:18px;background:#0f172a;color:white;letter-spacing:-.04em}.content h2{font-size:22px;line-height:1.12;margin:20px 0 10px;padding:14px 12px;border-radius:16px;background:#f1f5f9;border:1px solid var(--line);letter-spacing:-.035em}.content h3{font-size:18px;line-height:1.18;margin:16px 0 8px;color:#1f2937;letter-spacing:-.02em}.content p{margin:0 0 12px}.content ul,.content ol{margin:8px 0 16px 22px;padding:0}.content li{margin:7px 0}.content table{width:100%;display:block;overflow-x:auto;border-collapse:collapse;margin:12px 0 18px;border:1px solid var(--line);border-radius:14px;background:white}.content th,.content td{padding:10px;border-bottom:1px solid var(--line);min-width:120px;text-align:left;vertical-align:top;font-size:14px}.content th{background:#f8fafc;font-weight:900}.content tr:last-child td{border-bottom:0}.content code{background:#f1f5f9;border-radius:6px;padding:2px 5px}.content pre{background:#0f172a;color:#e5e7eb;border-radius:14px;padding:14px;overflow:auto;font-size:13px}.hr{height:1px;background:var(--line);margin:18px 0}.top-link{display:inline-block;margin:6px 0 0;color:var(--blue);font-size:13px;font-weight:800;text-decoration:none}.footer-actions{position:fixed;right:12px;bottom:12px;z-index:60;display:flex;gap:8px}.float-btn{border:0;background:var(--blue);color:white;text-decoration:none;border-radius:999px;padding:11px 13px;font-weight:900;font-size:13px;box-shadow:0 10px 24px rgba(0,113,227,.28)}.desktop-only{display:none}.standalone-nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}.standalone-nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 10px;font-size:13px;font-weight:800}@media(min-width:800px){body{font-size:16px}.site-header{position:sticky;top:0}.site-header h1{font-size:34px}.header-inner{padding:22px 24px 12px}.cycle-tabs{display:flex;overflow-x:auto;padding:14px 24px 16px;margin:0 -24px -12px}.cycle-tab{width:auto;flex:0 0 auto;border-radius:999px;padding:10px 12px;font-size:14px;white-space:nowrap}.wrap{padding:24px 24px 80px}.cycle-hero{padding:30px}.cycle-hero h2{font-size:40px}.meta-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.cycle-body{padding:18px 34px 36px}.content h1{font-size:30px}.content h2{font-size:24px}.content h3{font-size:19px}.desktop-only{display:inline}.cycle{margin-bottom:36px}}@media(print){.site-header,.footer-actions,.jump-list,.top-link{display:none}.wrap{padding:0}.cycle{box-shadow:none;border:0;border-radius:0;page-break-after:always}.cycle-body,.cycle-hero{padding:18px}.content h1{color:#111827;background:white;border:1px solid #111827}}
+</style></head><body id="top"><header class="site-header"><div class="header-inner"><div class="eyebrow">CrossFit Blaze Programming</div><h1>Blaze Winter Engine 2026-2027</h1><p>HTML-first programming storage. Phone-readable, fully expanded.</p><div class="standalone-nav"><a href="../index.html">All Cycles</a><a href="#top">Top</a></div></div></header><main class="wrap"><section class="cycle" id="blaze-winter-engine-2026-2027"><div class="cycle-hero"><h2>Blaze Winter Engine 2026-2027</h2><div class="meta-grid"><div class="meta"><span class="meta-label">Start</span><span class="meta-value">2026-11-30</span></div><div class="meta"><span class="meta-label">End</span><span class="meta-value">2027-02-28</span></div><div class="meta"><span class="meta-label">Weeks</span><span class="meta-value">13</span></div><div class="meta"><span class="meta-label">Detailed Days</span><span class="meta-value">78/78</span></div><div class="meta"><span class="meta-label">Status</span><span class="meta-value">planned</span></div></div><div class="notice"><strong>Focus:</strong> Running Capacity + Aerobic Durability + Open-Style Fitness</div><div class="status-note complete"><strong>Programming coverage:</strong> Full daily detail detected: 78 day sections. Nothing is hidden or collapsed below.</div><div class="jump-list"><a href="#blaze-winter-engine-2026-2027-week-1-running-reintroduction-aerobic-base">Week 1 — Running Reintroduction + Aero</a><a href="#blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body C</a><a href="#blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pul</a><a href="#blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</a><a href="#blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</a><a href="#blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</a><a href="#blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacit</a><a href="#blaze-winter-engine-2026-2027-week-2-running-reintroduction-aerobic-base">Week 2 — Running Reintroduction + Aero</a><a href="#blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body C</a><a href="#blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pul</a><a href="#blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</a><a href="#blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</a><a href="#blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</a><a href="#blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacit</a><a href="#blaze-winter-engine-2026-2027-week-3-running-reintroduction-aerobic-base">Week 3 — Running Reintroduction + Aero</a><a href="#blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body C</a><a href="#blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pul</a><a href="#blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</a><a href="#blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</a><a href="#blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</a><a href="#blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacit</a><a href="#blaze-winter-engine-2026-2027-week-4-running-reintroduction-aerobic-base">Week 4 — Running Reintroduction + Aero</a><a href="#blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body C</a><a href="#blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pul</a><a href="#blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</a><a href="#blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</a><a href="#blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</a><a href="#blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacit</a><a href="#blaze-winter-engine-2026-2027-week-5-tempo-intervals-longer-mixed-work">Week 5 — Tempo, Intervals + Longer Mix</a><a href="#blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body C</a></div></div><div class="cycle-body"><div class="content"><h1 id="blaze-winter-engine-2026-2027-blaze-winter-engine-2026-2027">Blaze Winter Engine 2026-2027</h1>
+<p><strong>Nov 30, 2026 – Feb 28, 2027 | 13 Weeks | 6 programmed days/week</strong></p>
+<h2 id="blaze-winter-engine-2026-2027-member-facing-explanation">Member-Facing Explanation</h2>
+<p>&gt; “The weather is finally good enough to use the outside again. This cycle brings running back progressively while keeping strength, gymnastics, and CrossFit intensity in the program. The goal is a bigger engine without beating up knees, calves, or backs.”</p>
+<h2 id="blaze-winter-engine-2026-2027-cycle-rules">Cycle Rules</h2>
+<ul>
+<li>Running returns gradually: short intervals first, then tempo pieces, then longer mixed workouts.</li>
+<li>Every run has a machine option for scaling, weather, or injury.</li>
+<li>Strength stays in the week, but the main adaptation is engine, pacing, and repeatability.</li>
+<li>No sudden high-volume running spikes.</li>
+<li>Bodybuilding/prehab finishers emphasize calves, tibialis, hamstrings, hips, trunk, and shoulders.</li>
+<li>January/February can support Open-style fitness without making every Friday a test.</li>
+</ul>
+<h2 id="blaze-winter-engine-2026-2027-weekly-template">Weekly Template</h2>
+<table>
+<tr><th>Day</th><th>Focus</th><th>Intent</th></tr>
+<tr><td>Monday</td><td>Lower strength + short engine</td><td>Maintain squat/hinge strength</td></tr>
+<tr><td>Tuesday</td><td>Upper/gymnastics + intervals</td><td>Pull/press durability with repeatable conditioning</td></tr>
+<tr><td>Wednesday</td><td>Run development / aerobic base</td><td>Main running progression day</td></tr>
+<tr><td>Thursday</td><td>Hinge/Oly + short metcon</td><td>Power and posterior chain</td></tr>
+<tr><td>Friday</td><td>Open-style CrossFit</td><td>Mixed modal intensity with skill exposure</td></tr>
+<tr><td>Saturday</td><td>Partner long engine</td><td>Outdoor community piece when weather is good</td></tr>
+</table>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-1-running-reintroduction-aerobic-base">Week 1 — Running Reintroduction + Aerobic Base</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Nov 30, 2026</strong> <strong>Phase:</strong> Phase 1 — Running Reintroduction + Aerobic Base <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 5 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 150m run or 10/8 cal bike, 10 goblet squats, 8 sit-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 8 pull-ups/ring rows, 100m run or 8/6 cal row, 8 DB push press</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Run intervals: 6 x 200m every 2:30; machine option 12/10 cal bike</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 6 hang power cleans, 10/8 cal row, 100m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Open-style 14:00 AMRAP: 10 DB snatches, 12 wall balls, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner 34:00 AMRAP: 400m run together, then split 40 wall balls, 40 sit-ups, 40 box step-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-2-running-reintroduction-aerobic-base">Week 2 — Running Reintroduction + Aerobic Base</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Dec 7, 2026</strong> <strong>Phase:</strong> Phase 1 — Running Reintroduction + Aerobic Base <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 5 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 12:00 cap: 4 rounds of 200m run, 12 DB front squats, 10 burpees</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 10 knee raises, 12 DB floor press, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Tempo engine: 4 x 4:00 easy-moderate run with 2:00 walk/rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 11:00 cap: 5 rounds of 8 deadlifts, 10 box jumps, 100m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 15:00 cap: 3 rounds of 400m run, 21 KB swings, 12 pull-ups/ring rows</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner run-chipper 35:00 cap: 800m run together, 100/80 cal row, 80 KB swings, 60 burpees, 400m run together</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-3-running-reintroduction-aerobic-base">Week 3 — Running Reintroduction + Aerobic Base</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Dec 14, 2026</strong> <strong>Phase:</strong> Phase 1 — Running Reintroduction + Aerobic Base <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 5 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>10:00 AMRAP: 100m run, 12 wall balls, 10 box step-ups Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 15: gymnastics / run-machine / press / trunk / rest Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>32:00 continuous: 400m run, 2:00 machine, 100m carry, trunk work Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 6 power snatches, 8 burpees over bar, 150m run Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 18: barbell / gymnastics / run-machine / rest Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Outdoor option: 5 rounds partner relay — 300m run each, 30 med ball cleans, 30 ring rows Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-4-running-reintroduction-aerobic-base">Week 4 — Running Reintroduction + Aerobic Base</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Dec 21, 2026</strong> <strong>Phase:</strong> Phase 1 — Running Reintroduction + Aerobic Base <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 5 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 150m run or 10/8 cal bike, 10 goblet squats, 8 sit-ups Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 8 pull-ups/ring rows, 100m run or 8/6 cal row, 8 DB push press Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Run intervals: 6 x 200m every 2:30; machine option 12/10 cal bike Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 6 hang power cleans, 10/8 cal row, 100m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Open-style 14:00 AMRAP: 10 DB snatches, 12 wall balls, 150m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 1 — Running Reintroduction + Aerobic Base. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner 34:00 AMRAP: 400m run together, then split 40 wall balls, 40 sit-ups, 40 box step-ups Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-5-tempo-intervals-longer-mixed-work">Week 5 — Tempo, Intervals + Longer Mixed Work</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Dec 28, 2026</strong> <strong>Phase:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 4 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 12:00 cap: 4 rounds of 200m run, 12 DB front squats, 10 burpees</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 10 knee raises, 12 DB floor press, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Tempo engine: 4 x 4:00 easy-moderate run with 2:00 walk/rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 11:00 cap: 5 rounds of 8 deadlifts, 10 box jumps, 100m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 15:00 cap: 3 rounds of 400m run, 21 KB swings, 12 pull-ups/ring rows</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner run-chipper 35:00 cap: 800m run together, 100/80 cal row, 80 KB swings, 60 burpees, 400m run together</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-6-tempo-intervals-longer-mixed-work">Week 6 — Tempo, Intervals + Longer Mixed Work</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Jan 4, 2027</strong> <strong>Phase:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 4 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>10:00 AMRAP: 100m run, 12 wall balls, 10 box step-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 15: gymnastics / run-machine / press / trunk / rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>32:00 continuous: 400m run, 2:00 machine, 100m carry, trunk work</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 6 power snatches, 8 burpees over bar, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 18: barbell / gymnastics / run-machine / rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Outdoor option: 5 rounds partner relay — 300m run each, 30 med ball cleans, 30 ring rows</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-7-tempo-intervals-longer-mixed-work">Week 7 — Tempo, Intervals + Longer Mixed Work</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Jan 11, 2027</strong> <strong>Phase:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 4 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 150m run or 10/8 cal bike, 10 goblet squats, 8 sit-ups Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 8 pull-ups/ring rows, 100m run or 8/6 cal row, 8 DB push press Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Run intervals: 6 x 200m every 2:30; machine option 12/10 cal bike Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 6 hang power cleans, 10/8 cal row, 100m run Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Open-style 14:00 AMRAP: 10 DB snatches, 12 wall balls, 150m run Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner 34:00 AMRAP: 400m run together, then split 40 wall balls, 40 sit-ups, 40 box step-ups Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-8-tempo-intervals-longer-mixed-work">Week 8 — Tempo, Intervals + Longer Mixed Work</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Jan 18, 2027</strong> <strong>Phase:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 4 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 12:00 cap: 4 rounds of 200m run, 12 DB front squats, 10 burpees Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 10 knee raises, 12 DB floor press, 150m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Tempo engine: 4 x 4:00 easy-moderate run with 2:00 walk/rest Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 11:00 cap: 5 rounds of 8 deadlifts, 10 box jumps, 100m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 15:00 cap: 3 rounds of 400m run, 21 KB swings, 12 pull-ups/ring rows Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner run-chipper 35:00 cap: 800m run together, 100/80 cal row, 80 KB swings, 60 burpees, 400m run together Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-9-tempo-intervals-longer-mixed-work">Week 9 — Tempo, Intervals + Longer Mixed Work</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Jan 25, 2027</strong> <strong>Phase:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 4 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>10:00 AMRAP: 100m run, 12 wall balls, 10 box step-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 15: gymnastics / run-machine / press / trunk / rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>32:00 continuous: 400m run, 2:00 machine, 100m carry, trunk work</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 6 power snatches, 8 burpees over bar, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 18: barbell / gymnastics / run-machine / rest</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 2 — Tempo, Intervals + Longer Mixed Work. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Outdoor option: 5 rounds partner relay — 300m run each, 30 med ball cleans, 30 ring rows</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-10-winter-engine-tests-open-style-fitness">Week 10 — Winter Engine Tests + Open-Style Fitness</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Feb 1, 2027</strong> <strong>Phase:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 3 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 150m run or 10/8 cal bike, 10 goblet squats, 8 sit-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 8 pull-ups/ring rows, 100m run or 8/6 cal row, 8 DB push press</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Run intervals: 6 x 200m every 2:30; machine option 12/10 cal bike</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 6 hang power cleans, 10/8 cal row, 100m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Open-style 14:00 AMRAP: 10 DB snatches, 12 wall balls, 150m run</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner 34:00 AMRAP: 400m run together, then split 40 wall balls, 40 sit-ups, 40 box step-ups</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-11-winter-engine-tests-open-style-fitness">Week 11 — Winter Engine Tests + Open-Style Fitness</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Feb 8, 2027</strong> <strong>Phase:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 3 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 12:00 cap: 4 rounds of 200m run, 12 DB front squats, 10 burpees Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 10 knee raises, 12 DB floor press, 150m run Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Tempo engine: 4 x 4:00 easy-moderate run with 2:00 walk/rest Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 11:00 cap: 5 rounds of 8 deadlifts, 10 box jumps, 100m run Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>For time, 15:00 cap: 3 rounds of 400m run, 21 KB swings, 12 pull-ups/ring rows Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner run-chipper 35:00 cap: 800m run together, 100/80 cal row, 80 KB swings, 60 burpees, 400m run together Push pace, but keep movement standards clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-12-winter-engine-tests-open-style-fitness">Week 12 — Winter Engine Tests + Open-Style Fitness</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Feb 15, 2027</strong> <strong>Phase:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 3 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>10:00 AMRAP: 100m run, 12 wall balls, 10 box step-ups Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8:00 quality: 12 Bulgarian split squats each side + 15 calf raises + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 15: gymnastics / run-machine / press / trunk / rest Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>7:00 pump: 12 DB curls + 12 band pressdowns + 15 face pulls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>32:00 continuous: 400m run, 2:00 machine, 100m carry, trunk work Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 trunk flow: 20 sec hollow, 20 sec arch, 20 sec side plank each side + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>12:00 AMRAP: 6 power snatches, 8 burpees over bar, 150m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>8-7-6 posterior ladder: hip thrusts + banded hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>EMOM 18: barbell / gymnastics / run-machine / rest Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 shoulder/trunk flush: 10 band pull-aparts, 10 dead bugs, 10 empty-bar good mornings</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Outdoor option: 5 rounds partner relay — 300m run each, 30 med ball cleans, 30 ring rows Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>5:00 partner pump: alternate DB curls + DB floor press + plank + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-week-13-winter-engine-tests-open-style-fitness">Week 13 — Winter Engine Tests + Open-Style Fitness</h1>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Week of Feb 22, 2027</strong> <strong>Phase:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness <strong>Weekly emphasis:</strong> progressive running exposure, engine work, strength maintenance, and calf/hip/trunk durability.</p>
+<h2 id="blaze-winter-engine-2026-2027-monday-squat-strength-lower-body-capacity">Monday — Squat Strength + Lower-Body Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is squat strength + lower-body capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 air squats, 10 glute bridges, 10 walking lunges, 20 sec squat hold, 2 ramp sets for the squat pattern.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 18:00: 3 front squats or back squats, leave 2 reps in reserve, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 150m run or 10/8 cal bike, 10 goblet squats, 8 sit-ups Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 goblet cyclist squats + 20 sec wall sit + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-tuesday-upper-gymnastics-press-pull">Tuesday — Upper Gymnastics + Press/Pull</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is upper gymnastics + press/pull without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row, 15 band pull-aparts, 10 scap pull-ups/ring rows, 10 push-ups to box, 20 sec hollow hold, 2 skill sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 3:00 for 15:00: strict pull/ring row progression + strict press or DB floor press, rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 8 pull-ups/ring rows, 100m run or 8/6 cal row, 8 DB push press Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Mechanical drop set, 6:00 cap: lateral raises full/partials + band triceps</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-wednesday-aerobic-base-trunk">Wednesday — Aerobic Base + Trunk</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is aerobic base + trunk without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>3:00 easy machine, 10 inchworms, 10 bird dogs, 10 step-ups, 30 sec couch stretch each side, 30 sec dead bug. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Run skill block — Every 3:00 for 18:00: relaxed run interval + walk/rest remainder. Keep nasal/conversational early; build only if mechanics stay clean.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Run intervals: 6 x 200m every 2:30; machine option 12/10 cal bike Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 1:00 for 6:00: suitcase hold, tibialis raises, dead bugs + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-thursday-hinge-olympic-cycling">Thursday — Hinge / Olympic Cycling</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is hinge / olympic cycling without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy row/bike, 10 empty-bar good mornings, 10 KB deadlifts, 10 high pulls, 5 hang muscle cleans/snatches, 2 build sets.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:30 for 15:00: 3 hang power cleans or 5 deadlifts, moderate and fast; rest the remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>E2MOM x 6: 6 hang power cleans, 10/8 cal row, 100m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>Every 90 sec for 6:00: 12 RDLs light + 12 hamstring curls</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-friday-mixed-crossfit-intensity">Friday — Mixed CrossFit Intensity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is mixed crossfit intensity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>2:00 easy machine, 10 pass-throughs, 10 air squats, 8 empty-bar thrusters or presses, 6 burpees, 2 practice rounds.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Every 2:00 for 12:00: Open-skill practice — gymnastics or barbell cycling, smooth sets, rest remainder.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Open-style 14:00 AMRAP: 10 DB snatches, 12 wall balls, 150m run Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>2 rounds, 7:00 cap: curls, triceps, rear delts</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h2 id="blaze-winter-engine-2026-2027-saturday-partner-community-capacity">Saturday — Partner / Community Capacity</h2>
+<a class="top-link" href="#top">↑ Back to top</a>
+<p><strong>Intent:</strong> Phase 3 — Winter Engine Tests + Open-Style Fitness. Main goal is partner / community capacity without losing weekly balance.</p>
+<h3 id="blaze-winter-engine-2026-2027-coach-led-warm-up-8-10-00">Coach-Led Warm-Up — 8–10:00</h3>
+<p>Coach-led partner warm-up: 3:00 easy machine, 10 squats, 10 ring rows, 10 step-ups, 10 sit-ups, then movement demo and flow. Add 2 x 100m relaxed run build-ups or machine build-ups.</p>
+<h3 id="blaze-winter-engine-2026-2027-strength-skill-timed-class-block">Strength / Skill — Timed Class Block</h3>
+<p>Partner prep — Every 3:00 for 12:00: 100m run together or machine sprint + 12 shared med ball reps, rest/transition.</p>
+<h3 id="blaze-winter-engine-2026-2027-conditioning">Conditioning</h3>
+<p>Partner 34:00 AMRAP: 400m run together, then split 40 wall balls, 40 sit-ups, 40 box step-ups Keep this as a quality checkpoint/retest exposure, not a sloppy redline.</p>
+<h3 id="blaze-winter-engine-2026-2027-bodybuilding-prehab-finisher">Bodybuilding / Prehab Finisher</h3>
+<p>6:00 easy mobility/pump: calves, couch stretch, band pull-aparts + 15 tibialis raises to support running volume.</p>
+<h3 id="blaze-winter-engine-2026-2027-scaling">Scaling</h3>
+<ul>
+<li><strong>Elite:</strong> prescribed volume/load, unbroken where appropriate, hold target finish window.</li>
+<li><strong>Standard:</strong> moderate load, small planned breaks, finish within the intended cap/window.</li>
+<li><strong>Modified:</strong> reduce load/reps by 20–30%, use ring rows/knee raises/step-ups as needed.</li>
+<li><strong>Foundation:</strong> technique-first movement, machine calories, carries, and controlled reps. Run may be replaced by bike/row/ski calories to preserve the intended time domain.</li>
+</ul>
+<div class="hr"></div>
+<h1 id="blaze-winter-engine-2026-2027-cycle-closeout">Cycle Closeout</h1>
+<h2 id="blaze-winter-engine-2026-2027-key-dates">Key Dates</h2>
+<table>
+<tr><th>Date</th><th>Event</th></tr>
+<tr><td>Nov 30, 2026</td><td>Cycle begins</td></tr>
+<tr><td>Feb 28, 2027</td><td>Cycle ends</td></tr>
+</table>
+<h2 id="blaze-winter-engine-2026-2027-wodify-notes">Wodify Notes</h2>
+<ul>
+<li>Each day is already separated by weekday heading and includes warm-up, timed strength/skill, conditioning, finisher, and scaling.</li>
+<li>Before pushing to Wodify, review exact dates, holiday closures, and equipment constraints.</li>
+<li>Programmed as 6 days/week; Sunday remains recovery/open gym.</li>
+</ul></div></div></section></main><div class="footer-actions"><a class="float-btn" href="#top">Top</a></div></body></html>

@@ -14,12 +14,12 @@ for p in SRC.glob('*.md'):
     text=p.read_text()
     weeks=re.search(r'weeks:\s*(\d+)', text)
     expected=int(weeks.group(1))*6 if weeks else None
-    warm=len(re.findall(r'(?im)^###\s+Coach-Led Warm-Up\s+—', text))
+    warm=len(re.findall(r'(?im)^###\s+(?:[^A-Za-z\n]+\s*)?Coach-Led Warm-Up\s+—', text))
     print(f"SOURCE {p.name}: warmups={warm} expected={expected}")
     if expected and warm != expected:
         fail.append(f"source warmup count {p.name} {warm}!={expected}")
     # detect explicit main conditioning clocks under 8 min (exclude finisher/prehab lines)
-    for m in re.finditer(r'(?im)^###\s+Conditioning\s*\n([^#]+?)(?=\n###|\n---|\Z)', text):
+    for m in re.finditer(r'(?im)^###\s+(?:[^A-Za-z\n]+\s*)?Conditioning\s*\n([^#]+?)(?=\n###|\n---|\Z)', text):
         block=m.group(1)
         # Check true total durations/caps only. Ignore interval counts (x 6) and station length when an explicit total is >=8.
         totals = []

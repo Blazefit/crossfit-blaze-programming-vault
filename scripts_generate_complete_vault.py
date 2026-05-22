@@ -15,18 +15,18 @@ for d in [CYCLES_DIR, DATA_DIR, PDF_DIR, LOCAL_HTML / 'cycles']:
 
 DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 DAY_FOCUS = {
-    'Monday': 'Squat strength + lower-body conditioning',
-    'Tuesday': 'Upper strength / gymnastics + shoulder durability',
-    'Wednesday': 'Aerobic base + trunk / carries',
-    'Thursday': 'Hinge / posterior chain / power',
-    'Friday': 'Mixed CrossFit intensity',
-    'Saturday': 'Partner / community capacity',
+    'Monday': '2:00 bike + squats, bridges, lunges, squat hold, barbell ramp.',
+    'Tuesday': '2:00 row + band pull-aparts, scap push-ups, ring rows, DB press, hollow hold.',
+    'Wednesday': '3:00 machine + dead bugs, bird dogs, Cossack shifts, plank, practice round.',
+    'Thursday': '2:00 bike + good mornings, KB DLs, empty-bar RDLs, hang muscle reps, ramp.',
+    'Friday': '2:00 machine + inchworms, med-ball DLs, step-back burpees, wall balls, practice rounds.',
+    'Saturday': '3:00 partner machine + squats, ring rows, med-ball cleans, carry, split plan.',
 }
-SCALING = """### Scaling
-- **Elite:** prescribed loading and higher-skill option; keep transitions sharp without sacrificing positions.
-- **Standard:** class prescription with load that allows steady sets and the intended time domain.
-- **Modified:** reduce loading/reps by 20–30%, use machine substitutions, and preserve the stimulus.
-- **Foundation:** technique-first version with simple movements, lower reps, and coach-controlled pacing.
+SCALING = """### 📉 Scaling
+- **Elite:** Rx+ / advanced skill.
+- **Standard:** Rx class version.
+- **Modified:** -20–30% reps/load; simpler skill.
+- **Foundation:** technique first; light + simple.
 """
 
 WARMUPS = {
@@ -161,18 +161,18 @@ def standard_day(cycle, week, day, weeks):
             cond = f"Partner chipper — For time, 30:00 cap: 100/80 cal {machine}, 80 KB swings, 70 wall balls, 60 box step-ups, 50 sit-ups, 40 burpees. Split anyhow."
     return f"""## {day} — {title_focus}
 
-**Intent:** {phase}. {intensity.capitalize()} effort that fits the weekly progression without creating back-to-back redline fatigue.
+**Intent:** {phase}. {intensity.capitalize()} effort.
 
-### Coach-Led Warm-Up — 8–10:00
+### 🔥 Coach-Led Warm-Up — 8–10:00
 {warm}
 
-### Strength / Skill — Timed Class Block
+### 💪 Strength / Skill
 {strength}
 
-### Conditioning
+### 🚦 Conditioning
 {cond}
 
-### Bodybuilding / Prehab Finisher
+### 🧱 Finisher
 {finisher(day, week)}
 
 {SCALING}"""
@@ -216,18 +216,18 @@ def christmas_day(week, day, n):
     }
     return f"""## {day} — {title}
 
-**Intent:** Festive training with real coaching structure. Keep the mood fun while preserving movement quality and the 8-minute minimum for main conditioning.
+**Intent:** Festive + coached. Main WOD stays 8+ min.
 
-### Coach-Led Warm-Up — 8–10:00
+### 🎄 Coach-Led Warm-Up — 8–10:00
 {WARMUPS[day]}
 
-### Strength / Skill — Timed Class Block
+### 💪 Strength / Skill
 {strength_by_day[day]}
 
-### Conditioning
+### 🚦 Conditioning
 {conds[n-1]}
 
-### Bodybuilding / Prehab Finisher
+### 🧱 Finisher
 {finisher(day, n)}
 
 {SCALING}"""
@@ -343,7 +343,7 @@ for p in md_files:
     cid = slugify(title)
     weeks = int(meta.get('weeks','0') or 0)
     expected = weeks*6
-    written = len(re.findall(r'(?im)^###\s+Coach-Led Warm-Up\s+—', text))
+    written = len(re.findall(r'(?im)^###\s+(?:[^A-Za-z\n]+\s*)?Coach-Led Warm-Up\s+—', text))
     complete = written >= expected and expected > 0
     note = f"Full daily detail detected: {written} day sections." if complete else f"Only {written} detailed day sections are written in the source file out of roughly {expected} expected training days."
     html_body = md_to_html(body)

@@ -2,7 +2,7 @@
 from __future__ import annotations
 from pathlib import Path
 import re, json, html, shutil
-from datetime import date
+from datetime import date, datetime, timedelta
 
 SRC = Path('/home/daneelbrain/Obsidian/🏋️ Programming/📅 Cycles')
 REPO = Path('/home/daneelbrain/hermes-workspace/crossfit-blaze-programming-vault')
@@ -244,10 +244,11 @@ def generate_christmas():
     (SRC / '12-Days-of-Christmas-2026.md').write_text(out)
 
 # Generate/rewrite incomplete source cycles.
-generate_cycle('Murph Prep 2026','Murph-Prep-2026.md','2026-04-01','2026-05-31',8,'Murph capacity without reckless volume','murph')
+generate_cycle('Murph Prep 2026','Murph-Prep-2026.md','2026-04-01','2026-05-25',8,'Murph capacity without reckless volume','murph')
 generate_cycle('Post-Murph Strength Build 2026','Post-Murph-Strength-Build-2026.md','2026-05-26','2026-07-19',8,'Strength Base','post')
 generate_cycle('Blaze Power & Athletic Capacity 2026','Blaze-Power-Athletic-Capacity-2026.md','2026-07-20','2026-08-30',6,'Power Output + Athletic Capacity','power')
 generate_christmas()
+
 
 # Static site rendering.
 def slugify(s):
@@ -272,6 +273,65 @@ def parse_frontmatter(text):
                     meta[k.strip()]=v.strip().strip('"')
             return meta, body
     return meta,text
+
+
+# Align every displayed workout heading/table with the real calendar dates.
+# Rules:
+# - If the date range has exactly the expected number of programmed days (Christmas), use consecutive dates.
+# - Otherwise, use 6 training days per cycle week starting on the cycle start weekday, then one rest day.
+#   This makes Post-Murph start Tuesday 5/26 and run Tue-Sun each cycle week, ending Sun 7/19.
+def align_cycle_dates(path):
+    text = path.read_text()
+    meta, body = parse_frontmatter(text)
+    if not meta.get('start') or not meta.get('weeks'):
+        return
+    weeks = int(meta.get('weeks', '0'))
+    expected = weeks * 6
+    start_dt = datetime.fromisoformat(meta['start']).date()
+    end_meta = datetime.fromisoformat(meta.get('end', meta['start'])).date()
+    inclusive_span = (end_meta - start_dt).days + 1
+    if inclusive_span == expected:
+        dates = [start_dt + timedelta(days=i) for i in range(expected)]
+    else:
+        dates = [start_dt + timedelta(days=(w * 7 + i)) for w in range(weeks) for i in range(6)]
+    # Fix frontmatter/date-range end for cycles whose last training day is different from stale metadata.
+    # Keep normal Mon-Sat cycles' Sunday end date as the cycle week end; only tighten if the old end creates a gap before the next known cycle.
+    if path.name == 'Murph-Prep-2026.md':
+        last = dates[-1].isoformat()
+        text = re.sub(r'(?m)^end: .*$', f'end: {last}', text)
+        text = re.sub(r'\*\*\d{4}-\d{2}-\d{2} – \d{4}-\d{2}-\d{2}', f'**{meta["start"]} – {last}', text, count=1)
+    idx = 0
+    def repl_heading(m):
+        nonlocal idx
+        if idx >= len(dates):
+            return m.group(0)
+        d = dates[idx]; idx += 1
+        focus = m.group('focus').strip()
+        return f"## {d.strftime('%A')} {d.month}/{d.day} — {focus}"
+    text = re.sub(r"(?m)^##\s+(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)(?:\s+\d{1,2}/\d{1,2})?\s+—\s+(?P<focus>.+)$", repl_heading, text)
+
+    # Rewrite the Weekly Template day labels to match the actual cycle weekdays for one representative week.
+    first_week = dates[:6]
+    old_rows = re.findall(r'(?m)^\|\s*(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|$', text)
+    # Only touch the first six rows after the Weekly Template table header.
+    def rewrite_weekly_template(match):
+        rows = []
+        # preserve existing focus/intent row order, just change the day labels
+        focus_rows = re.findall(r'^\|\s*(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|$', match.group(1), flags=re.M)
+        if len(focus_rows) < 6:
+            return match.group(0)
+        for d, (focus, intent) in zip(first_week, focus_rows[:6]):
+            rows.append(f"| {d.strftime('%A')} | {focus.strip()} | {intent.strip()} |")
+        return match.group(0).replace(match.group(1), '\n'.join(rows))
+    text = re.sub(r'(\| Day \| Focus \| Intent \|\n\|---\|---\|---\|\n)(?P<rows>(?:\|\s*(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*\|.*\|.*\|\n?){6})',
+                  lambda m: m.group(1) + '\n'.join(
+                      f"| {d.strftime('%A')} | {focus.strip()} | {intent.strip()} |"
+                      for d, (focus, intent) in zip(first_week, re.findall(r'^\|\s*(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|$', m.group('rows'), flags=re.M)[:6])
+                  ) + '\n', text, count=1)
+    path.write_text(text)
+
+for _cycle_file in SRC.glob('*.md'):
+    align_cycle_dates(_cycle_file)
 
 def inline_md(s):
     s=html.escape(s)

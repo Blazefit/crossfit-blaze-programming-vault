@@ -4,13 +4,13 @@
     "title": "Murph Prep 2026",
     "start": "2026-04-01",
     "end": "2026-05-25",
-    "weeks": "8",
+    "weeks": 8,
     "focus": "Murph capacity without reckless volume",
     "status": "planned",
     "written_days": 48,
     "expected_days": 48,
+    "quotes": 48,
     "complete": true,
-    "note": "Full daily detail detected: 48 day sections.",
     "file": "murph-prep-2026.html"
   },
   {
@@ -18,13 +18,13 @@
     "title": "Post-Murph Strength Build 2026",
     "start": "2026-05-26",
     "end": "2026-07-19",
-    "weeks": "8",
+    "weeks": 8,
     "focus": "Strength Base",
     "status": "planned",
     "written_days": 48,
     "expected_days": 48,
+    "quotes": 48,
     "complete": true,
-    "note": "Full daily detail detected: 48 day sections.",
     "file": "post-murph-strength-build-2026.html"
   },
   {
@@ -32,13 +32,13 @@
     "title": "Blaze Power & Athletic Capacity 2026",
     "start": "2026-07-20",
     "end": "2026-08-29",
-    "weeks": "6",
+    "weeks": 6,
     "focus": "Power Output + Athletic Capacity",
     "status": "planned",
     "written_days": 36,
     "expected_days": 36,
+    "quotes": 36,
     "complete": true,
-    "note": "Full daily detail detected: 36 day sections.",
     "file": "blaze-power-athletic-capacity-2026.html"
   },
   {
@@ -46,13 +46,13 @@
     "title": "Blaze Engine & Barbell Mastery 2026",
     "start": "2026-08-31",
     "end": "2026-11-28",
-    "weeks": "13",
+    "weeks": 13,
     "focus": "Barbell Cycling + Gymnastics Capacity + Mixed-Modal Engine",
     "status": "planned",
     "written_days": 78,
     "expected_days": 78,
+    "quotes": 78,
     "complete": true,
-    "note": "Full daily detail detected: 78 day sections.",
     "file": "blaze-engine-barbell-mastery-2026.html"
   },
   {
@@ -60,13 +60,13 @@
     "title": "Blaze Winter Engine 2026-2027",
     "start": "2026-11-30",
     "end": "2027-02-27",
-    "weeks": "13",
+    "weeks": 13,
     "focus": "Running Capacity + Aerobic Durability + Open-Style Fitness",
     "status": "planned",
     "written_days": 78,
     "expected_days": 78,
+    "quotes": 78,
     "complete": true,
-    "note": "Full daily detail detected: 78 day sections.",
     "file": "blaze-winter-engine-2026-2027.html"
   },
   {
@@ -74,13 +74,13 @@
     "title": "12 Days of Christmas 2026",
     "start": "2026-12-14",
     "end": "2026-12-25",
-    "weeks": "2",
+    "weeks": 2,
     "focus": "12 Days of Christmas / Holiday Community",
     "status": "planned",
     "written_days": 12,
     "expected_days": 12,
+    "quotes": 12,
     "complete": true,
-    "note": "Full daily detail detected: 12 day sections.",
     "file": "12-days-of-christmas-2026.html"
   }
 ]

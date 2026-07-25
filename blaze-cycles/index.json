@@ -39,5 +39,27 @@
         "barbell overhead press"
       ]
     }
-  ]
+  ],
+  "deployed": {
+    "date": "2026-07-25",
+    "url": "https://crossfitblaze.com/openclaw/blaze-ppl/",
+    "md5": "43fe44247e51e94da586d4a1b9c61c46",
+    "bytes": 85434,
+    "serverPath": "~/www/crossfitblaze.com/public_html/openclaw/blaze-ppl/index.html",
+    "features": [
+      "cycle switcher",
+      "per-set weight x reps logging",
+      "week tracker",
+      "cross-device sync via log-api.php"
+    ],
+    "rollback": {
+      "index.html.bak-20260725": "original single-cycle page (40417 b)",
+      "index.html.bak-20260725b": "multi-cycle, pre-logging (68514 b)"
+    }
+  },
+  "api": {
+    "endpoint": "openclaw/blaze-ppl/log-api.php",
+    "storage": "private/blaze-log/ (outside web root)",
+    "auth": "one-time setup token then PIN (hashed)"
+  }
 }

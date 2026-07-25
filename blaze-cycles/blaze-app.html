@@ -248,6 +248,83 @@
     @keyframes drawerIn{from{transform:translateX(100%);}to{transform:none;}}
     .sheet-grip{display:none;}
   }
+  /* ---- Training log / sync ---- */
+  .syncpill{
+    margin-left:8px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:4px 10px;color:var(--ink2);font-family:var(--font-mono);font-size:9.5px;
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .syncpill .sdot{width:7px;height:7px;border-radius:50%;background:var(--ink3);}
+  .syncpill.ok    .sdot{background:var(--pull);box-shadow:0 0 8px var(--pull);}
+  .syncpill.sync  .sdot{background:var(--yellow);animation:pulse 1s infinite;}
+  .syncpill.off   .sdot{background:var(--ink3);}
+  .syncpill.auth  .sdot{background:var(--ember);box-shadow:0 0 8px var(--ember);}
+  .syncpill.local .sdot{background:var(--pm);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  /* Week tracker */
+  .wkbar{
+    display:flex;align-items:center;gap:8px;margin:0 2px 14px;
+    background:var(--card);border:1px solid var(--line);border-radius:13px;padding:9px 11px;
+  }
+  .wkbar .wl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);}
+  .wkbar .wsel{display:flex;gap:5px;flex:1;flex-wrap:wrap;}
+  .wkbar .wbtn{
+    min-width:29px;padding:5px 7px;border-radius:8px;cursor:pointer;
+    background:var(--bg2);border:1px solid var(--line);color:var(--ink2);
+    font-family:var(--font-mono);font-size:12px;font-weight:700;
+  }
+  .wkbar .wbtn.on{background:var(--accent);border-color:var(--accent);color:#06080C;}
+  .wkbar .wbtn:active{transform:scale(.95);}
+
+  /* Per-exercise set log */
+  details.logbox{margin-top:10px;border-top:1px dashed var(--line);padding-top:9px;}
+  details.logbox summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+    font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
+  }
+  details.logbox summary::-webkit-details-marker{display:none;}
+  details.logbox summary .last{
+    margin-left:auto;font-family:var(--font-mono);font-size:11px;font-weight:500;
+    color:var(--ink3);letter-spacing:0;text-transform:none;
+  }
+  details.logbox summary .last b{color:var(--ink2);font-weight:700;}
+  details.logbox[open] summary{margin-bottom:9px;}
+  .setrow{display:grid;grid-template-columns:34px 1fr 14px 1fr;align-items:center;gap:7px;margin-bottom:6px;}
+  .setrow .sn{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.05em;}
+  .setrow .x{text-align:center;color:var(--ink3);font-size:11px;}
+  .setrow input{
+    font-family:var(--font-mono);font-weight:700;font-size:15px;color:var(--ink);
+    background:#0A0C10;border:1.5px solid var(--line);border-radius:8px;
+    padding:7px 8px;width:100%;text-align:center;
+  }
+  .setrow input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent);}
+  .setrow input.filled{color:var(--yellow);border-color:color-mix(in srgb,var(--yellow) 40%,var(--line));}
+  .sethead{display:grid;grid-template-columns:34px 1fr 14px 1fr;gap:7px;padding:0 0 3px;}
+  .sethead span{font-size:8.5px;font-weight:700;letter-spacing:.07em;color:var(--ink3);text-transform:uppercase;text-align:center;}
+  .sethead span:first-child{text-align:left;}
+  .lognote{width:100%;margin-top:4px;background:#0A0C10;border:1.5px solid var(--line);border-radius:8px;color:var(--ink2);font-family:var(--font-body);font-size:12.5px;padding:7px 9px;}
+  .lognote:focus{outline:none;border-color:var(--accent);}
+  .logmeta{display:flex;align-items:center;gap:8px;margin-top:7px;}
+  .logmeta .st{font-family:var(--font-mono);font-size:9.5px;color:var(--ink3);letter-spacing:.04em;}
+  .logmeta .st.saved{color:var(--pull);}
+
+  /* PIN dialog */
+  .pinwrap{padding:2px 0 4px;}
+  .pinwrap p{font-size:12.5px;color:var(--ink2);line-height:1.5;margin:0 0 12px;}
+  .pinwrap label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--ink3);text-transform:uppercase;margin:0 0 5px;}
+  .pinwrap input{
+    width:100%;font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--ink);
+    background:#0A0C10;border:1.5px solid var(--line);border-radius:9px;padding:10px 11px;margin-bottom:11px;
+  }
+  .pinwrap input:focus{outline:none;border-color:var(--accent);}
+  .pinbtn{width:100%;padding:11px;border:none;border-radius:10px;background:var(--accent);color:#06080C;font-family:var(--font-body);font-weight:700;font-size:14px;cursor:pointer;}
+  .pinbtn:active{transform:scale(.99);}
+  .pinbtn.ghost{background:none;border:1px solid var(--line);color:var(--ink2);margin-top:8px;}
+  .pinmsg{font-size:12px;margin-bottom:10px;min-height:16px;}
+  .pinmsg.err{color:var(--ember2);}
+  .pinmsg.ok{color:var(--pull);}
 </style>
 </head>
 <body>
@@ -259,7 +336,7 @@
     </div>
     <button class="cyc-switch" id="cycSwitch" type="button" aria-label="Switch cycle">
       <span class="cs-dot"></span><span id="cycleName">Arm &amp; Bicep</span><span class="cs-car">▾</span>
-    </button>
+    </button><button class="syncpill auth" id="syncPill" type="button" aria-label="Training log sync"><span class="sdot"></span><span class="stx">Sign in</span></button>
     <p class="sub" id="dsub">Heavy linear · post-surgery return · bench + arm-size priority</p>
   </header>
 
@@ -390,13 +467,14 @@ const DAYS={
 
 function round5(x,m){return Math.round(x/m)*m;}
 
-function exHTML(e){
+function exHTML(e,dayKey){
   const pill=e.pill==='bi'?'<span class="pill bi">Biceps</span>':e.pill==='main'?'<span class="pill main">Main</span>':e.pill==='rear'?'<span class="pill rear">Rear Δ</span>':e.pill==='side'?'<span class="pill side">Side Δ</span>':'';
   return `<div class="ex">
     <div class="top"><div class="name">${e.name}</div>${pill}</div>
     <div class="chips"><span class="chip"><span class="k">SETS</span>${e.sr}</span><span class="chip"><span class="k">REST</span>${e.rest}</span></div>
     <div class="cue">${e.cue}</div>
     ${e.calc?calcHTML(e.calc):''}
+    ${dayKey?logHTML(e,dayKey):''}
   </div>`;
 }
 function calcHTML(id){
@@ -415,23 +493,24 @@ function calcHTML(id){
     <div class="wk"></div>
   </div>`;
 }
-function groupHTML(g){
+function groupHTML(g,dayKey){
   if(g.type==='main'){
-    return `<div class="group main"><div class="grp-label main-l"><span class="dot"></span>${g.label||'Main lift · straight heavy sets'} <span class="hint">${g.hint||'full rest'}</span></div>${g.items.map(exHTML).join('')}</div>`;
+    return `<div class="group main"><div class="grp-label main-l"><span class="dot"></span>${g.label||'Main lift · straight heavy sets'} <span class="hint">${g.hint||'full rest'}</span></div>${g.items.map(x=>exHTML(x,dayKey)).join('')}</div>`;
   }
-  return `<div class="group"><div class="grp-label"><span class="dot"></span>${g.label}<span class="hint">⇄ back to back</span></div>${g.items.map(exHTML).join('')}</div>`;
+  return `<div class="group"><div class="grp-label"><span class="dot"></span>${g.label}<span class="hint">⇄ back to back</span></div>${g.items.map(x=>exHTML(x,dayKey)).join('')}</div>`;
 }
 function renderDay(key){
   const d=ACTIVE.days[key];
-  return `<div class="day-banner"><div class="num">${d.n}</div><div><div class="t">${d.title} Day</div><div class="tag">${d.tag}</div></div></div>${d.note?`<div class="note warn">${d.note}</div>`:''}${d.groups.map(groupHTML).join('')}`;
+  return `<div class="day-banner"><div class="num">${d.n}</div><div><div class="t">${d.title} Day</div><div class="tag">${d.tag}</div></div></div>${d.note?`<div class="note warn">${d.note}</div>`:''}${weekBarHTML(ACTIVE)}${d.groups.map(g=>groupHTML(g,key)).join('')}`;
 }
 
 function renderWeeks(calcEl){
   const id=calcEl.dataset.calc, cfg=ACTIVE.calc[id];
   const tm=parseFloat(calcEl.querySelector('.tm').value);
   const wk=calcEl.querySelector('.wk');
-  wk.innerHTML=cfg.weeks.map(([w,tagi,pct,reps])=>{
-    const hl=tagi?'hl':'';
+  const curW=(typeof ACTIVE!=='undefined'&&typeof cycleWeek==='function')?cycleWeek(ACTIVE.id):0;
+  wk.innerHTML=cfg.weeks.map(([w,tagi,pct,reps],wi)=>{
+    const hl=(wi+1===curW)?'hl':(tagi?'hl':'');
     const lbs=(tm&&tm>0)?round5(tm*pct/100,cfg.round)+'<small> lb</small>':'—';
     const sub=tagi?`<small>${tagi}</small>`:'';
     return `<div class="wk-row ${hl}"><div class="wlab">${w}${sub}</div><div class="pct">${pct}%</div><div class="rep">×${reps}</div><div class="lbs">${lbs}</div></div>`;
@@ -694,7 +773,8 @@ let activeTab=null;
 /* --- Training Max persistence (per-lift, per device) --- */
 function tmKey(id){return 'blazePPL.tm.'+id;}
 function tmGet(id){try{return localStorage.getItem(tmKey(id));}catch(e){return null;}}
-function tmSet(id,v){try{(v&&parseFloat(v)>0)?localStorage.setItem(tmKey(id),v):localStorage.removeItem(tmKey(id));}catch(e){}}
+function tmSet(id,v){try{(v&&parseFloat(v)>0)?localStorage.setItem(tmKey(id),v):localStorage.removeItem(tmKey(id));}catch(e){}
+  try{if(typeof queuePatch==='function')queuePatch('tm',id,{v:(v===''?null:parseFloat(v)),ts:nowTs()});}catch(e){}}
 function tmStatus(c){
   const v=c.querySelector('.tm').value, st=c.querySelector('.tmstatus'), clr=c.querySelector('.tmclear');
   if(v&&parseFloat(v)>0){st.textContent='✓ Saved on this device';st.classList.add('saved');clr.classList.add('show');}
@@ -703,7 +783,9 @@ function tmStatus(c){
 function wireCalcs(){
   document.querySelectorAll('.calc').forEach(c=>{
     const id=c.dataset.calc, tm=c.querySelector('.tm');
-    const saved=tmGet(id); if(saved!==null)tm.value=saved;   // restore on load
+    let saved=tmGet(id);
+    try{const rem=LOG.tm&&LOG.tm[id];if(rem&&rem.v!=null)saved=String(rem.v);}catch(e){}   // server wins if present
+    if(saved!==null&&saved!==undefined)tm.value=saved;
     renderWeeks(c); tmStatus(c);
     tm.addEventListener('input',()=>{tmSet(id,tm.value);renderWeeks(c);tmStatus(c);});
     c.querySelector('.ew').addEventListener('input',()=>renderEst(c));
@@ -738,6 +820,7 @@ function buildCycle(id){
   });
 
   wireCalcs();
+  wireLogs();
   selectTab(cy.nav[0].t);
 }
 
@@ -756,6 +839,8 @@ function selectTab(t){
 /* --- cycle switcher sheet / drawer --- */
 function buildSwitcher(){
   const list=document.getElementById('cycList');
+  document.querySelector('.sheet-title').textContent='Cycle Library';
+  document.querySelector('.sheet-sub').textContent='Choose a training focus';
   list.innerHTML=Object.values(CYCLES).map(cy=>{
     const on=cy.id===ACTIVE.id?'on':'';
     const badge=cy.draft?'<span class="cyc-badge draft">Draft</span>'
@@ -778,8 +863,234 @@ document.querySelectorAll('#sheet [data-close]').forEach(el=>el.addEventListener
 document.querySelector('#sheet .cyc.extra').addEventListener('click',()=>{ selectTab('pm'); closeSheet(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeSheet(); });
 
+/* ============================================================
+   TRAINING LOG + CROSS-DEVICE SYNC
+   Local-first: every entry saves to this device instantly, then
+   syncs to log-api.php (data lives outside the web root, PIN-gated).
+   Works fully offline; queued changes flush when you're back.
+   ============================================================ */
+const API_URL='log-api.php';
+const LSK={pin:'blazeLog.pin',cache:'blazeLog.cache',queue:'blazeLog.queue'};
+let LOG={cycles:{},tm:{},sessions:{}};
+let PENDING={sessions:{},cycles:{},tm:{}};
+let pushTimer=null;
+
+function lsGet(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function getPin(){try{return localStorage.getItem(LSK.pin)||'';}catch(e){return'';}}
+function setPinLocal(p){try{p?localStorage.setItem(LSK.pin,p):localStorage.removeItem(LSK.pin);}catch(e){}}
+
+function slugify(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'ex';}
+function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function nowTs(){return Math.floor(new Date().getTime()/1000);}
+function setCount(sr){const m=/^(\d+)\s*(?:sets?|×|x)/i.exec(String(sr||''));return m?Math.max(1,Math.min(6,parseInt(m[1],10))):3;}
+function normLog(l){l=l||{};return{cycles:l.cycles||{},tm:l.tm||{},sessions:l.sessions||{}};}
+
+/* ---------- sync status pill ---------- */
+function setSync(state,label){
+  const el=document.getElementById('syncPill'); if(!el)return;
+  el.className='syncpill '+state;
+  const txt={ok:'Synced',sync:'Syncing',off:'Offline',auth:'Sign in',local:'This device'}[state]||state;
+  el.querySelector('.stx').textContent=label||txt;
+}
+
+async function api(action,body){
+  const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.assign({action:action,pin:getPin()},body||{}))});
+  let j={}; try{j=await res.json();}catch(e){}
+  if(!res.ok||!j.ok){const err=new Error(j.error||('http '+res.status));err.status=res.status;throw err;}
+  return j;
+}
+
+async function syncPull(){
+  LOG=normLog(lsGet(LSK.cache,null));            // show cached data instantly
+  PENDING=lsGet(LSK.queue,{sessions:{},cycles:{},tm:{}});
+  if(!getPin()){setSync('auth');refreshAllLogUI();return;}
+  setSync('sync');
+  try{
+    const j=await api('get');
+    LOG=normLog(j.log); lsSet(LSK.cache,LOG); setSync('ok');
+    if(Object.keys(PENDING.sessions).length||Object.keys(PENDING.cycles).length||Object.keys(PENDING.tm).length) doPush();
+  }catch(e){ setSync(e.status===401?'auth':'off'); }
+  refreshAllLogUI();
+}
+
+function queuePatch(part,key,val){
+  PENDING[part][key]=val; LOG[part][key]=val;
+  lsSet(LSK.queue,PENDING); lsSet(LSK.cache,LOG);
+  clearTimeout(pushTimer); pushTimer=setTimeout(doPush,1200);
+}
+
+async function doPush(){
+  if(!getPin()){setSync('auth');return;}
+  const empty=!Object.keys(PENDING.sessions).length&&!Object.keys(PENDING.cycles).length&&!Object.keys(PENDING.tm).length;
+  if(empty)return;
+  setSync('sync');
+  const sending=JSON.parse(JSON.stringify(PENDING));
+  try{
+    const j=await api('put',{patch:sending});
+    LOG=normLog(j.log);
+    for(const p of ['sessions','cycles','tm']) for(const k in sending[p]) if(PENDING[p][k]===sending[p][k]) delete PENDING[p][k];
+    lsSet(LSK.queue,PENDING); lsSet(LSK.cache,LOG); setSync('ok');
+  }catch(e){ setSync(e.status===401?'auth':'off'); }   // stays queued for next time
+}
+
+/* ---------- week tracker ---------- */
+function cycleWeek(cid){const c=LOG.cycles[cid];const n=c&&parseInt(c.week,10);return (n&&n>0)?n:1;}
+function setCycleWeek(cid,w){
+  queuePatch('cycles',cid,{week:w,ts:nowTs()});
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.w,10)===w));
+  document.querySelectorAll('.calc').forEach(renderWeeks);   // re-highlight the % table
+}
+function weekBarHTML(cy){
+  const n=cy.calc&&Object.keys(cy.calc).length?(cy.calc[Object.keys(cy.calc)[0]].weeks.length):(cy.weeks||8);
+  const cur=cycleWeek(cy.id); let b='';
+  for(let i=1;i<=n;i++) b+=`<button class="wbtn${i===cur?' on':''}" data-w="${i}" type="button">${i}</button>`;
+  return `<div class="wkbar"><span class="wl">Week</span><div class="wsel">${b}</div></div>`;
+}
+
+/* ---------- per-exercise set log ---------- */
+function sessionKey(dayKey){return todayKey()+'|'+ACTIVE.id+'|'+dayKey;}
+function logHTML(e,dayKey){
+  const id=slugify(e.name), n=setCount(e.sr);
+  let rows='<div class="sethead"><span>Set</span><span>Weight</span><span></span><span>Reps</span></div>';
+  for(let i=0;i<n;i++){
+    rows+=`<div class="setrow"><span class="sn">${i+1}</span>`+
+      `<input class="lw" data-i="${i}" type="number" inputmode="decimal" placeholder="lb">`+
+      `<span class="x">×</span>`+
+      `<input class="lr" data-i="${i}" type="number" inputmode="numeric" placeholder="reps"></div>`;
+  }
+  return `<details class="logbox" data-ex="${id}" data-day="${dayKey}">
+    <summary>Log sets<span class="last"></span></summary>
+    ${rows}
+    <input class="lognote" type="text" placeholder="Note (optional) — how it felt, RPE, tweaks…">
+    <div class="logmeta"><span class="st"></span></div>
+  </details>`;
+}
+
+function lastEntry(exId,dayKey){
+  const today=sessionKey(dayKey); let best=null,bestKey='';
+  for(const k in LOG.sessions){
+    const p=k.split('|');
+    if(p[1]!==ACTIVE.id||p[2]!==dayKey||k===today) continue;
+    const s=LOG.sessions[k]; if(!s.ex||!s.ex[exId]) continue;
+    if(!best||k>bestKey){best=s;bestKey=k;}
+  }
+  if(!best)return null;
+  return {date:bestKey.split('|')[0],week:best.week,sets:best.ex[exId]};
+}
+
+function paintLogBox(box){
+  const exId=box.dataset.ex, dayKey=box.dataset.day;
+  const sess=LOG.sessions[sessionKey(dayKey)];
+  const mine=sess&&sess.ex?sess.ex[exId]:null;
+  box.querySelectorAll('.setrow').forEach((row,i)=>{
+    const w=row.querySelector('.lw'), r=row.querySelector('.lr');
+    const rec=mine&&mine[i];
+    if(rec&&document.activeElement!==w) w.value=(rec.w??'');
+    if(rec&&document.activeElement!==r) r.value=(rec.r??'');
+    w.classList.toggle('filled',!!w.value); r.classList.toggle('filled',!!r.value);
+  });
+  const note=box.querySelector('.lognote');
+  if(sess&&sess.notes&&sess.notes[exId]!=null&&document.activeElement!==note) note.value=sess.notes[exId];
+  const prev=lastEntry(exId,dayKey), lab=box.querySelector('.last');
+  if(mine&&mine.some(s=>s&&(s.w||s.r))) lab.innerHTML='<b>logged today</b>';
+  else if(prev) lab.innerHTML='last <b>'+prev.sets.filter(s=>s&&s.w).map(s=>s.w+'×'+(s.r||'?')).join(', ')+'</b>';
+  else lab.textContent='';
+}
+function refreshAllLogUI(){
+  document.querySelectorAll('.logbox').forEach(paintLogBox);
+  const cur=cycleWeek(ACTIVE.id);
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.w,10)===cur));
+  document.querySelectorAll('.calc').forEach(renderWeeks);
+}
+
+function saveLogBox(box){
+  const exId=box.dataset.ex, dayKey=box.dataset.day, key=sessionKey(dayKey);
+  const sess=Object.assign({ts:0,week:cycleWeek(ACTIVE.id),ex:{},notes:{}},LOG.sessions[key]||{});
+  sess.ex=Object.assign({},sess.ex); sess.notes=Object.assign({},sess.notes||{});
+  const sets=[];
+  box.querySelectorAll('.setrow').forEach(row=>{
+    const w=row.querySelector('.lw').value, r=row.querySelector('.lr').value;
+    sets.push({w:w===''?null:parseFloat(w),r:r===''?null:parseInt(r,10)});
+    row.querySelector('.lw').classList.toggle('filled',w!=='');
+    row.querySelector('.lr').classList.toggle('filled',r!=='');
+  });
+  if(sets.some(s=>s.w!==null||s.r!==null)) sess.ex[exId]=sets; else delete sess.ex[exId];
+  const note=box.querySelector('.lognote').value.trim();
+  if(note) sess.notes[exId]=note; else delete sess.notes[exId];
+  sess.ts=nowTs(); sess.week=cycleWeek(ACTIVE.id);
+  queuePatch('sessions',key,sess);
+  const st=box.querySelector('.st'); st.textContent='✓ Saved'; st.classList.add('saved');
+  clearTimeout(box._t); box._t=setTimeout(()=>{st.textContent='';st.classList.remove('saved');},1800);
+}
+
+function wireLogs(){
+  document.querySelectorAll('.logbox').forEach(box=>{
+    paintLogBox(box);
+    box.querySelectorAll('input').forEach(inp=>{
+      inp.addEventListener('input',()=>{clearTimeout(box._s);box._s=setTimeout(()=>saveLogBox(box),500);});
+      inp.addEventListener('blur',()=>saveLogBox(box));
+    });
+  });
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.addEventListener('click',()=>setCycleWeek(ACTIVE.id,parseInt(b.dataset.w,10))));
+}
+
+/* ---------- PIN / device pairing ---------- */
+function pinDialogHTML(configured){
+  return `<div class="pinwrap">
+    <p>${configured
+      ? 'Enter your training-log PIN to sync this device. Your log lives on your own server — nothing is stored with anyone else.'
+      : 'First-time setup. Enter the <b>setup token</b> from your server plus a PIN you\\u2019ll use on every device.'}</p>
+    <div class="pinmsg" id="pinMsg"></div>
+    ${configured?'':'<label>Setup token</label><input id="pinToken" type="text" autocomplete="off" placeholder="one-time token">'}
+    <label>PIN</label><input id="pinInput" type="password" inputmode="numeric" autocomplete="off" placeholder="your PIN">
+    <button class="pinbtn" id="pinGo" type="button">${configured?'Connect this device':'Create log'}</button>
+    ${getPin()?'<button class="pinbtn ghost" id="pinOut" type="button">Disconnect this device</button>':''}
+  </div>`;
+}
+async function openPin(){
+  let configured=true;
+  try{const r=await fetch(API_URL);const j=await r.json();configured=!!j.configured;}catch(e){}
+  const list=document.getElementById('cycList');
+  document.getElementById('sheet').hidden=false;
+  list.innerHTML=pinDialogHTML(configured);
+  document.querySelector('.sheet-title').textContent='Training Log';
+  document.querySelector('.sheet-sub').textContent=configured?'Sync this device':'First-time setup';
+  const msg=document.getElementById('pinMsg');
+  const go=document.getElementById('pinGo');
+  go.addEventListener('click',async()=>{
+    const pin=document.getElementById('pinInput').value.trim();
+    if(pin.length<4){msg.className='pinmsg err';msg.textContent='PIN must be at least 4 characters.';return;}
+    setPinLocal(pin); msg.className='pinmsg'; msg.textContent='Working…';
+    try{
+      if(!configured){
+        const tok=document.getElementById('pinToken').value.trim();
+        await api('setup',{token:tok});
+      }
+      await api('get');
+      msg.className='pinmsg ok'; msg.textContent='✓ Connected. Syncing…';
+      await syncPull();
+      setTimeout(closeSheet,700);
+    }catch(e){
+      setPinLocal('');
+      msg.className='pinmsg err';
+      msg.textContent=e.status===401?'Wrong PIN.':e.status===403?'Bad or missing setup token.':('Could not connect: '+e.message);
+      setSync('auth');
+    }
+  });
+  const out=document.getElementById('pinOut');
+  if(out) out.addEventListener('click',()=>{setPinLocal('');setSync('auth');closeSheet();});
+}
+
 /* --- boot --- */
+document.getElementById('syncPill').addEventListener('click',openPin);
+LOG=normLog(lsGet(LSK.cache,null));
+PENDING=lsGet(LSK.queue,{sessions:{},cycles:{},tm:{}});
 buildCycle('arm-bicep');
+syncPull();
+window.addEventListener('online',()=>doPush());
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncPull();});
 </script>
 </body>
 </html>

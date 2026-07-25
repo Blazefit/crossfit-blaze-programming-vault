@@ -527,130 +527,164 @@ const CYCLES={
   },
   'shoulder-delt':{
     id:'shoulder-delt', name:'Shoulder & Delt', tag:'DELT', badge:'5-WK DELT',
-    focus:'Rear-delt-first blitz · 3D delts · spine-friendly',
+    focus:'Rear-delt-first · rotating press · upper/lower alternating',
     color:'var(--push2)', draft:true,
-    sub:'Rear-delt-first · 5-week delt blitz · seated press anchor',
+    sub:'Rear-delt-first · 5-week delt block · rotating press variations',
     calc:{
-      ohp:{round:5,weeks:[['Wk 1','ramp',70,6],['Wk 2','',73,6],['Wk 3','',76,5],['Wk 4','',79,5],['Wk 5','peak',82,4]]},
+      ohp:{round:5,weeks:[['Wk 1','A · ramp',70,6],['Wk 2','A',74,6],['Wk 3','B',77,5],['Wk 4','B',80,5],['Wk 5','A · peak',83,4]]},
       belt:{round:5,weeks:[['Wk 1','ramp',65,8],['Wk 2','',67.5,8],['Wk 3','',70,6],['Wk 4','',72.5,6],['Wk 5','hold',72.5,6]]}
     },
     days:{
-      press:{n:'01',title:'Press',tag:'Seated press anchor · front + side delts · rear-delt opener · spine-safe',groups:[
-        {type:'main',items:[{name:'Seated DB / Machine Shoulder Press',sr:'4 sets @ %',rest:'3 min',cue:'The heavy anchor. Back flat against the upright bench — zero spinal load, no standing, no barbell overhead. Work all 4 sets at the week’s %. Week 1 is a 70% ramp — clean reps, nothing near failure. (Once the V7 lands, its 75–85° guided shoulder press is a perfect swap — same back support.)',calc:'ohp',pill:'main'}]},
+      press:{n:'01',title:'Press',tag:'MON · upper · rotating press anchor · side + rear delts · triceps',
+        note:'<b>Press rotates in 2-week waves.</b> Wks 1–2 = <b>A: Seated Neutral-Grip DB Press</b>. Wks 3–4 = <b>B: Seated Landmine Press</b>. Wk 5 = back to <b>A</b> so you can measure the PR against Week 1. The % ladder climbs every week regardless — that’s the linear progression; the variation is what keeps the stimulus fresh. Same TM across both; expect B to feel ~5% different, adjust and note it. <b>No curls today</b> — elbows get one heavy day (Wed) only.',
+        groups:[
+        {type:'main',label:'Main press · A/B wave · straight heavy sets',hint:'full rest',items:[
+          {name:'Seated Press — Wave A / B',sr:'4 sets @ %',rest:'3 min',cue:'<b>Wks 1–2 &amp; 5 (A): Seated Neutral-Grip DB Press.</b> Palms facing in — the shoulder-friendliest vertical press, back flat on the upright bench.<br><b>Wks 3–4 (B): Seated Landmine Press.</b> Bar in the corner/landmine, seated on a low box or bench with the chest tall — the angled arc is easier on the joint than true vertical, and it loads a barbell without ever putting it over your spine.<br>Both: zero spinal load, no barbell overhead. Week 1 is a 70% ramp — clean reps, nothing near failure. (When the V7 lands, its 75–85° guided press is a legitimate third variation — sub it in for a wave.)',calc:'ohp',pill:'main'}]},
         {type:'ss',label:'Rear-Delt Opener',items:[
-          {name:'Reverse Pec-Deck / Chest-Supported Rear Fly',sr:'3 × 15–20',rest:'—',cue:'We open every day with rear delts. Chest on the pad, elbows lead a wide arc, squeeze the back of the shoulder — feel it there, not in the traps. Light and strict. (No pec-deck? Chest-supported DB rear fly on the incline bench.)',pill:'rear'},
-          {name:'Seated DB Lateral Raise',sr:'3 × 12–15',rest:'90s',cue:'Side-delt width. Seated so the low back stays out of it. Lead with the elbows, thumbs slightly down, no swing — pour the water out.',pill:'side'}]},
-        {type:'ss',label:'Superset B',items:[
-          {name:'Single-Arm Cable Lateral Raise',sr:'3 × 12–15 /side',rest:'—',cue:'✦ Unilateral — one cable, lean away from the stack for a longer arc. Brace on the frame, lead with the elbow, no body-english. Fixes the weaker side directly.',pill:'side'},
-          {name:'Cable Face Pull (rope, elbows high)',sr:'3 × 15–20',rest:'90s',cue:'Rear delt + rotator-cuff health. Pull to the forehead, elbows above the wrists, spread at the end. Owns the back of the shoulder.',pill:'rear'}]},
-        {type:'ss',label:'Arms Tick-Over',items:[
-          {name:'Rope Triceps Pushdown',sr:'3 × 12–15',rest:'—',cue:'Keeps the triceps and feeds press lockout. Smooth, full extension, no elbow flare.'},
-          {name:'EZ-Bar / DB Curl',sr:'2 × 10–12',rest:'60s',cue:'Hold the arm size you built last block. Strict reps, no swing.',pill:'bi'}]},
+          {name:'Chest-Supported DB Rear Fly',sr:'3 × 15–20',rest:'—',cue:'We open every upper day with rear delts. Chest down on a 30–45° incline bench, DBs hanging straight down, elbows lead a wide arc out and back. Squeeze the back of the shoulder, pause a beat, lower slow. Feel it there — not in the traps. Light is right.',pill:'rear'},
+          {name:'Rope Face Pull (elbows high)',sr:'3 × 15–20',rest:'90s',cue:'Rear delt + rotator-cuff health. Pull the rope to the forehead with the elbows above the wrists, spread hard at the end. Owns the back of the shoulder.',pill:'rear'}]},
+        {type:'ss',label:'Side-Delt Width · weekly rotation',items:[
+          {name:'Lateral Raise — rotates weekly',sr:'3 × 12–15',rest:'—',cue:'<b>Wk 1: Seated DB Lateral.</b> Strict, seated, low back out of it.<br><b>Wk 2: Single-Arm Cable Lateral (lean-away).</b> ✦ Longest arc, constant tension.<br><b>Wk 3: DB Lateral + top partials.</b> Full reps to the cap, then pulse the top third.<br><b>Wk 4: Seated Cable Lateral (both sides).</b> Tension through the bottom.<br><b>Wk 5: Single-Arm Cable Lateral.</b> Back to the Wk-2 movement — beat that number.<br>Every version: lead with the elbow, no swing, no ego.',pill:'side'},
+          {name:'Band Pull-Apart',sr:'3 × 20',rest:'90s',cue:'Cheap, joint-friendly rear-delt and upper-back volume. Arms straight-ish, pull to the chest, squeeze the blades. No cable needed.',pill:'rear'}]},
+        {type:'ss',label:'Triceps (no curls today)',items:[
+          {name:'Rope Triceps Pushdown',sr:'3 × 12–15',rest:'—',cue:'Feeds press lockout and keeps the arms. Elbows pinned, smooth full extension. The only elbow work today — biceps get Wednesday.'},
+          {name:'Single-Arm Overhead DB Triceps Ext',sr:'2 × 12 /side',rest:'60s',cue:'✦ Unilateral long-head stretch, seated, DB overhead. Light and controlled.'}]},
         {type:'ss',label:'Core Finisher',items:[
           {name:'Pallof Press',sr:'3 × 10–12 /side',rest:'60s',cue:'Anti-rotation — resist the cable twisting you. Ribs down, back-safe brace.'},
           {name:'Dead Bug',sr:'3 × 10 /side',rest:'45s',cue:'Low back pinned to the floor, slow opposite arm/leg. Anti-extension, zero spinal load.'}]}
       ]},
-      rear:{n:'02',title:'Rear Delt',tag:'The HEAVY rear-delt day · back width · external rotation · biceps · spine-friendly',groups:[
-        {type:'main',label:'Rear-delt anchor · straight sets',hint:'full rest',items:[{name:'Chest-Supported High Row (rear-delt bias)',sr:'4 × 8–10',rest:'2–3 min',cue:'The heaviest rear delts get all week. Chest on the incline pad — zero spinal load. Row to the collarbone with elbows flared ~45° out, NOT to the hips — that flare is what turns a row into rear-delt mass. Load-based: add weight when 4×10 is clean.',pill:'rear'}]},
-        {type:'ss',label:'Rear-Delt Volume',items:[
-          {name:'Reverse Pec-Deck / Chest-Supported Rear Fly',sr:'3 × 15–20',rest:'—',cue:'Straight-arm now — a pure rear-delt fly, a different job than the row. Deep stretch across the chest, wide squeeze, pause a beat at the back. Light is right.',pill:'rear'},
-          {name:'Cable Rear-Delt Cross',sr:'3 × 15–20',rest:'90s',cue:'Cables crossed, pull wide and slightly up. Constant tension the rear delts can’t escape. Chase the burn, not the weight.',pill:'rear'}]},
+      lowerA:{n:'02',title:'Lower A',tag:'TUE · lower + abs · quad focus · belt-squat anchor · spine-safe',
+        note:'<b>The day between upper sessions.</b> Legs run on maintenance this block — enough to hold what you built, not enough to steal recovery from the delts. Nothing past RPE 8.',
+        groups:[
+        {type:'main',items:[{name:'Belt Squat',sr:'3–4 sets @ %',rest:'2–3 min',cue:'Hip-loaded, zero axial load. Work at the week’s % — TM is an estimate, keep effort ≤ RPE 8. Reuses the TM you saved on the arm block.',calc:'belt',pill:'main'}]},
+        {type:'ss',label:'Superset A',items:[
+          {name:'Bulgarian Split Squat',sr:'3 × 8–10 /leg',rest:'—',cue:'Your favorite. Long stride, knee tracks the toe, control the way down.'},
+          {name:'Single-Leg Seated Leg Curl',sr:'3 × 10–12 /leg',rest:'90s',cue:'✦ Unilateral — one leg on the seated curl, chest on the pad. Pause the squeeze, slow the negative.'}]},
+        {type:'ss',label:'Superset B',items:[
+          {name:'Single-Leg Leg Extension',sr:'3 × 12–15 /leg',rest:'—',cue:'✦ Unilateral — your favorite, one leg at a time. 1-second hold at the top; the weak side can’t hide.'},
+          {name:'Single-Leg Calf Raise',sr:'3 × 12–15 /leg',rest:'60s',cue:'✦ Unilateral — hold a DB in that hand for load. Full stretch, pause at the top.'}]},
+        {type:'ss',label:'Abs',items:[
+          {name:'Cable Crunch',sr:'3 × 15',rest:'60s',cue:'Round down through the abs, hips fixed. Smooth tempo, full squeeze.'},
+          {name:'Plank',sr:'3 × 45–60s',rest:'45s',cue:'Anti-extension hold. Ribs down, glutes tight, spine neutral — don’t let the hips sag.'}]}
+      ]},
+      rear:{n:'03',title:'Rear',tag:'WED · upper · the HEAVY rear-delt day · back width · the ONE elbow day',
+        note:'<b>This is the only heavy biceps day of the week.</b> Elbows get one hard session, then 6 days before the next real one — that’s the whole point. Rear delts are the priority here and get the heaviest work they see all week.',
+        groups:[
+        {type:'main',label:'Rear-delt anchor · straight sets',hint:'full rest',items:[
+          {name:'Chest-Supported High Row (rear-delt bias)',sr:'4 × 8–10',rest:'2–3 min',cue:'The heaviest rear delts get all week. Chest on the incline pad — zero spinal load. Row to the <b>collarbone with the elbows flared ~45° out</b>, NOT to the hips — that flare is what turns a row into rear-delt mass. Load-based, not %: add weight when 4×10 is clean.',pill:'rear'}]},
+        {type:'ss',label:'Rear-Delt Volume · rotates weekly',items:[
+          {name:'Rear Fly — rotates weekly',sr:'3 × 15–20',rest:'—',cue:'<b>Wk 1: Chest-Supported DB Rear Fly (incline bench).</b><br><b>Wk 2: Single-Arm Chest-Supported Rear Fly.</b> ✦ One side at a time, longer pause.<br><b>Wk 3: Prone Incline T-Raise.</b> Thumbs up, straight arms to a T.<br><b>Wk 4: Chest-Supported DB Rear Fly, 3-sec negative.</b><br><b>Wk 5: Single-Arm Chest-Supported Rear Fly.</b> Beat the Wk-2 number.<br>All chest-supported, all straight-ish arms, all light and strict — pure rear delt, nothing on the spine.',pill:'rear'},
+          {name:'Rope Face Pull',sr:'3 × 15–20',rest:'90s',cue:'Second rear-delt angle. Elbows high, pull to the forehead, spread at the end. High reps, constant tension.',pill:'rear'}]},
         {type:'ss',label:'Cuff + Traps',items:[
-          {name:'Single-Arm Cable External Rotation',sr:'3 × 15 /side',rest:'—',cue:'✦ Unilateral — elbow pinned to the ribs, rotate the forearm out. Rotator-cuff health + rear-delt tie-in, keeps the 3D shoulder honest.',pill:'rear'},
-          {name:'DB / Cable Shrug',sr:'3 × 12–15',rest:'90s',cue:'Upper-trap volume for the 3D yoke — DBs at your sides or a cable, straight up, pause at the top. No barbell, nothing on the spine.'}]},
+          {name:'Single-Arm Cable External Rotation',sr:'3 × 15 /side',rest:'—',cue:'✦ Unilateral — elbow pinned to the ribs, rotate the forearm out. Rotator-cuff health + rear-delt tie-in; keeps the 3D shoulder honest.',pill:'rear'},
+          {name:'DB Shrug',sr:'3 × 12–15',rest:'90s',cue:'Upper-trap volume for the yoke — DBs at your sides, straight up, pause at the top. No barbell, nothing on the spine.'}]},
         {type:'ss',label:'Back Width',items:[
-          {name:'Single-Arm Lat Pulldown',sr:'3 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — half-seated and supported, full overhead stretch to the ribs. A little width behind the delt work; erases the left/right gap.'}]},
-        {type:'ss',label:'Biceps (heavy)',items:[
-          {name:'EZ-Bar / DB Curl',sr:'3 × 8–10',rest:'—',cue:'The heavy biceps anchor lives here, same as your arm block. Micro-load weekly, strict.',pill:'bi'},
-          {name:'Single-Arm DB Hammer Curl',sr:'3 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — brachialis = arm thickness, one side at a time so the strong arm can’t carry it. Neutral grip, no swing.',pill:'bi'}]},
+          {name:'Single-Arm Lat Pulldown',sr:'3 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — half-seated and supported, full overhead stretch to the ribs. Width behind the delt work; erases the left/right gap.'}]},
+        {type:'ss',label:'Biceps · the one heavy day',items:[
+          {name:'EZ-Bar / DB Curl',sr:'3 × 8–10',rest:'—',cue:'The single heavy biceps anchor for the week. Micro-load weekly, strict reps, no swing. Everything the elbows need to hold the size you built — without curling three days running.',pill:'bi'},
+          {name:'Single-Arm DB Hammer Curl',sr:'2 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — brachialis = arm thickness, one side at a time so the strong arm can’t carry it. Neutral grip is the elbow-friendliest curl there is.',pill:'bi'}]},
         {type:'ss',label:'Core Finisher',items:[
           {name:'Hanging Knee Raise',sr:'3 × 12–15',rest:'60s',cue:'Knees to chest, control the descent — no swing, no spinal load. (Alt: dead bug 3 × 10 /side.)'},
           {name:'Side Plank',sr:'3 × 30–40s /side',rest:'45s',cue:'Anti-lateral-flexion. Stack the hips, lift tall, hold steady.'}]}
       ]},
-      vol:{n:'03',title:'Volume',tag:'3D delt hypertrophy · dumbbells + cables · rear-delt heavy · RPE-capped, no %',
-        note:'<b>Start small, build slow.</b> Pure pump day on a returning body. Weeks 1–2: just <b>2 sets</b> per movement, no Pump Finisher. Week 3+: full 3 sets + finisher. Nothing past RPE 8. Rear delts lead here too.',
+      lowerB:{n:'04',title:'Lower B',tag:'THU · lower + abs · posterior chain · hams / glutes / calves · spine-safe',
+        note:'<b>The second buffer day.</b> Posterior-chain flavour so it doesn’t just repeat Tuesday. Same rules: RPE ≤ 8, no % table, nothing on the spine.',
         groups:[
-        {type:'main',label:'Top press · double progression',hint:'full rest',items:[{name:'Seated DB Shoulder Press',sr:'3 × 10–12',rest:'2–3 min',cue:'All dumbbells today — friendlier on the shoulder and the surgical area. No % here: when every set hits 12 clean, take the next DBs up and drop back to 10. Back flat against the bench.',pill:'main'}]},
+        {type:'main',label:'Main · mass sets',hint:'full rest',items:[
+          {name:'Belt Squat — Mass Sets',sr:'3 × 10–12',rest:'2–3 min',cue:'Same machine as Tuesday, different job: higher reps, 3-count lowering, smooth drive up, RPE ≤ 8. No %: when every set hits 12 clean, add load and drop back to 10.',pill:'main'}]},
+        {type:'ss',label:'Superset A',items:[
+          {name:'Band-Assisted Nordic Curl',sr:'3 × 6–10',rest:'—',cue:'Kneel on a pad, band from the rig to your chest, hips locked straight. Lower as slow as you can — the eccentric is the mass builder. Spine stays rigid and unloaded. (Too spicy? Slider curls.)'},
+          {name:'Belt Squat Calf Raise',sr:'3 × 12–15',rest:'90s',cue:'Stand tall on the belt squat — heavy calf loading through the hips, zero spinal compression. Toes on a plate, 1-second pause at the top.'}]},
+        {type:'ss',label:'Superset B',items:[
+          {name:'DB Step-Up (box)',sr:'3 × 8–10 /leg',rest:'—',cue:'Knee-height box, DBs at your sides, chest tall. Drive through the top heel, control the way down — quad + glute without a bar near your back.'},
+          {name:'Banded Lateral Walk',sr:'2 × 15 steps /side',rest:'60s',cue:'Band above the knees, stay low, wide steps. Glute med — the stabilizer that keeps knees and hips honest.'}]},
+        {type:'ss',label:'Abs',items:[
+          {name:'McGill Curl-Up',sr:'3 × 5 /side',rest:'—',cue:'Hands under the low back, one knee bent — curl the sternum up, neck neutral. The back-surgeon-approved crunch.'},
+          {name:'Side Plank + Reach',sr:'3 × 20–30s /side',rest:'45s',cue:'Side plank with a slow reach-through and open. Anti-lateral-flexion plus a little rotation control.'}]}
+      ]},
+      vol:{n:'05',title:'Volume',tag:'FRI · upper · 3D delt pump · a DIFFERENT press angle · rear-delt heavy',
+        note:'<b>Start small, build slow.</b> Weeks 1–2: <b>2 sets</b> per movement, no Pump Finisher. Week 3+: full 3 sets + finisher. Nothing past RPE 8. Today’s press is a <b>high-incline</b> — a different angle than Monday’s vertical press on purpose, not the same lift twice.',
+        groups:[
+        {type:'main',label:'Top press · different angle · double progression',hint:'full rest',items:[
+          {name:'High-Incline DB Press (~60°)',sr:'3 × 10–12',rest:'2–3 min',cue:'Bench set high but not vertical — this hits the front delt with an upper-chest tie-in, a genuinely different stimulus than Monday’s neutral-grip/landmine vertical press. No % here: when every set hits 12 clean, take the next DBs up and drop back to 10. Back fully supported.',pill:'main'}]},
         {type:'ss',label:'Rear-Delt Double',items:[
-          {name:'Chest-Supported Rear Fly',sr:'3 × 15–20',rest:'—',cue:'Same strict fly, higher-rep pump. Squeeze and pause; let the stretch do the work.',pill:'rear'},
-          {name:'Cable Face Pull',sr:'3 × 20',rest:'90s',cue:'Rope to the forehead, elbows high, spread hard at the end. Metabolite pump for the rear delts.',pill:'rear'}]},
+          {name:'Chest-Supported DB Rear Fly',sr:'3 × 15–20',rest:'—',cue:'Third rear-delt session of the week. Strict, paused, light. Squeeze and hold a beat at the back.',pill:'rear'},
+          {name:'Band Pull-Apart (or Rope Face Pull)',sr:'3 × 20–25',rest:'90s',cue:'High-rep metabolite work for the rear delts and upper back. Squeeze the blades, no traps.',pill:'rear'}]},
         {type:'ss',label:'Side-Delt Width',items:[
           {name:'DB Lateral Raise + top partials',sr:'3 × 12–15 + partials',rest:'—',cue:'Full reps to the cap, then pulse the top third till it burns. Side delts respond to time under tension.',pill:'side'},
           {name:'Single-Arm Cable Lateral (lean-away)',sr:'3 × 15 /side',rest:'90s',cue:'✦ Unilateral — long arc, constant tension. Even out the width side to side.',pill:'side'}]},
-        {type:'ss',label:'Upper Delt + Arms',items:[
+        {type:'ss',label:'Upper Delt + Traps',items:[
           {name:'Chest-Supported DB Y-Raise',sr:'3 × 12–15',rest:'—',cue:'Chest down on the low-incline bench, light DBs, thumbs up, raise to a Y. Upper delts + lower traps, spine fully supported. Light is right.'},
-          {name:'Cable Curl / Pushdown superset',sr:'2 × 15–20',rest:'60s',cue:'Quick arm pump to close — curl then pushdown, back to back. Keep the arms you built.',pill:'bi'}]},
+          {name:'Rope Triceps Pushdown',sr:'2 × 15',rest:'60s',cue:'Light triceps pump to close the pressing. Easy on the elbow — no heavy extensions today.'}]},
+        {type:'ss',label:'Biceps · light &amp; optional',items:[
+          {name:'Cable / DB Curl — light',sr:'2 × 15–20',rest:'60s',cue:'<b>Optional pump only</b>, and the second (last) elbow session of the week — 2 days after Wednesday’s heavy curls, never back-to-back. Light, constant tension, 4+ reps left in the tank. <b>If the elbows are barking at all, skip this entirely</b> — you lose nothing.',pill:'bi'}]},
         {type:'ss',label:'Pump Finisher (wk 3+)',items:[
           {name:'Lateral Raise Burnout',sr:'2 × 20–25',rest:'—',cue:'Light DBs, strict-ish, go till the side delts quit. Short rest.',pill:'side'},
           {name:'Rear Fly Burnout',sr:'2 × 20–25',rest:'60s',cue:'Finish where we started — rear delts. Light, fast squeeze, chase the burn.',pill:'rear'}]},
         {type:'ss',label:'Core Finisher',items:[
           {name:'Bird Dog',sr:'3 × 8 /side',rest:'—',cue:'Slow and square — hips level, reach long. Back-safe stability.'},
-          {name:'McGill Curl-Up',sr:'3 × 5 /side',rest:'45s',cue:'Hands under the low back, one knee bent — curl the sternum, neck neutral. The surgeon-approved crunch.'}]}
-      ]},
-      lower:{n:'04',title:'Lower',tag:'Belt-squat maintenance · spine-safe legs · + rear & side-delt finisher',groups:[
-        {type:'main',items:[{name:'Belt Squat',sr:'3–4 sets @ %',rest:'2–3 min',cue:'Legs stay in maintenance this block — enough to hold what you built, not enough to steal recovery from the delts. Hip-loaded, zero axial load, effort ≤ RPE 8.',calc:'belt',pill:'main'}]},
-        {type:'ss',label:'Superset A',items:[
-          {name:'Bulgarian Split Squat',sr:'3 × 8–10 /leg',rest:'—',cue:'Your favorite. Long stride, knee tracks the toe, control the way down.'},
-          {name:'Single-Leg Seated Leg Curl',sr:'3 × 10–12 /leg',rest:'90s',cue:'✦ Unilateral — one leg on the seated curl, chest on the pad. Pause the squeeze, slow the negative.'}]},
-        {type:'ss',label:'Superset B',items:[
-          {name:'Single-Leg Leg Extension',sr:'3 × 12–15 /leg',rest:'—',cue:'✦ Unilateral — 1-second hold at the top, the weak side can’t hide.'},
-          {name:'Single-Leg Calf Raise',sr:'3 × 12–15 /leg',rest:'60s',cue:'✦ Unilateral — hold a DB in that hand for load. Full stretch, pause at the top.'}]},
-        {type:'ss',label:'Delt Finisher',items:[
-          {name:'Chest-Supported Rear Fly',sr:'2 × 20',rest:'—',cue:'Even on leg day the rear delts get a touch — that’s the 4th session this week. Light, strict, squeeze.',pill:'rear'},
-          {name:'Single-Arm Cable Lateral Raise',sr:'2 × 15 /side',rest:'60s',cue:'✦ Unilateral width to close. Lean away, lead with the elbow.',pill:'side'}]},
-        {type:'ss',label:'Core Finisher',items:[
-          {name:'Plank',sr:'3 × 45–60s',rest:'45s',cue:'Anti-extension hold. Ribs down, glutes tight, spine neutral.'},
-          {name:'Side Plank + Reach',sr:'3 × 20–30s /side',rest:'45s',cue:'Slow reach-through and open — anti-lateral-flexion plus a little rotation control.'}]}
+          {name:'Hanging Leg Raise',sr:'3 × 12–15',rest:'45s',cue:'Controlled flexion, no load on the spine. Lower slow — no swing.'}]}
       ]}
     },
     plan:`
-<div class="pcard"><h3>How this delt block works</h3>
+<div class="pcard"><h3>The week — upper / lower alternating</h3>
 <div class="arc">
-<div class="a"><div class="w">4× / week</div><div class="x">A short, high-frequency blitz: <b>Press · Rear Delt · Volume · Lower</b>. Run it ~4 days a week for <b>5 weeks</b>, then rotate back to a heavier block.</div></div>
-<div class="a"><div class="w">Rear delts</div><div class="x"><b>The priority — every single day.</b> Heavy on Rear-Delt day, opener on Press day, double on Volume day, finisher on Lower day. <b>~25 sets/week</b>, most of it light and elbow-led.</div></div>
-<div class="a"><div class="w">Press</div><div class="x"><b>Seated / machine shoulder press</b> is the one heavy linear lift — % of a Training Max, back fully supported, no barbell overhead.</div></div>
-<div class="a"><div class="w">Volume day</div><div class="x">All-dumbbell 3D delt pump, RPE-capped, no % table. Starts small — 2 sets per movement for the first 2 weeks.</div></div>
-<div class="a"><div class="w">Legs</div><div class="x"><b>Maintenance only</b> — belt-squat + unilateral work to hold what you built without stealing recovery from the delts.</div></div>
-<div class="a"><div class="w">Arms</div><div class="x">Kept ticking over — heavy biceps on Rear-Delt day, a pump elsewhere. You don’t lose the arms you just built.</div></div>
-<div class="a"><div class="w">Unilateral ✦</div><div class="x">Single-arm laterals, external rotation, rows and leg work woven in to hunt left/right gaps. All seated or supported.</div></div>
-<div class="a"><div class="w">Core</div><div class="x"><b>Spine-friendly</b> finisher each day — anti-rotation, anti-extension, McGill curl-up, side planks. No loaded spinal work.</div></div>
+<div class="a"><div class="w">Mon</div><div class="x"><b>Press</b> — upper. Rotating press anchor, side + rear delts, triceps. <b>No curls.</b></div></div>
+<div class="a"><div class="w">Tue</div><div class="x"><b>Lower A</b> — quads + abs. Belt-squat anchor.</div></div>
+<div class="a"><div class="w">Wed</div><div class="x"><b>Rear</b> — upper. The heavy rear-delt day <b>and the one heavy elbow day.</b></div></div>
+<div class="a"><div class="w">Thu</div><div class="x"><b>Lower B</b> — posterior chain + abs.</div></div>
+<div class="a"><div class="w">Fri</div><div class="x"><b>Volume</b> — upper. Delt pump on a different press angle. Optional light curls.</div></div>
+<div class="a"><div class="w">Sat / Sun</div><div class="x">Off, or an easy PM add-on.</div></div>
+</div>
+<div class="gd" style="margin-top:12px"><b>Never two upper days back to back.</b> A lower day always sits between them — the shoulders get 48h every time, which is what actually lets the delt volume land.</div>
+</div>
+
+<div class="pcard"><h3>Press rotation — variety <i>and</i> linear progression</h3>
+<div class="arc">
+<div class="a"><div class="w">Wks 1–2</div><div class="x"><b>A · Seated Neutral-Grip DB Press</b> — 70% → 74%. Shoulder-friendliest vertical press.</div></div>
+<div class="a"><div class="w">Wks 3–4</div><div class="x"><b>B · Seated Landmine Press</b> — 77% → 80%. Angled arc, barbell load, never over the spine.</div></div>
+<div class="a"><div class="w">Wk 5</div><div class="x"><b>A · peak</b> — 83% × 4. Same lift as Week 1, so the PR is a real, measurable comparison.</div></div>
+<div class="a"><div class="w">Why waves</div><div class="x">Two weeks is long enough to actually progress a lift, short enough that you never grind the same groove for a month. The <b>% climbs every single week</b> — that’s the linear progression — while the implement changes underneath it.</div></div>
+<div class="a"><div class="w">Friday</div><div class="x">A <b>high-incline DB press</b>, not the Monday lift again — different angle, different rep range, no % table.</div></div>
+<div class="a"><div class="w">Accessories</div><div class="x">Laterals and rear flyes <b>rotate weekly</b> (see the day cards), with Wk 5 repeating a Wk-2 movement so there’s a number to beat.</div></div>
 </div></div>
 
-<div class="pcard"><h3>5-week arc</h3>
-<div class="arc">
-<div class="a"><div class="w">Week 1</div><div class="x"><b>Ramp-in.</b> Press at 70%, delt volume at 2 sets. Re-groove the patterns, feel the rear delts.</div></div>
-<div class="a"><div class="w">Wk 2–4</div><div class="x"><b>Climb.</b> Press % goes up weekly; delt volume opens to full 3 sets + finisher from week 3. Double-progress every accessory.</div></div>
-<div class="a"><div class="w">Week 5</div><div class="x"><b>Peak.</b> Heavy press top set, delt volume trimmed slightly so the shoulders look full and fresh — then rotate to the next block.</div></div>
-</div></div>
-
-<div class="pcard"><h3>Loading</h3>
-<div class="prow"><div class="l">Seated Press</div><div class="r">% of a <b>Training Max</b> (not 1RM). Enter your TM on the Press card — weights compute live. Set it conservatively.</div></div>
-<div class="prow"><div class="l">Belt Squat</div><div class="r"><b>Maintenance</b> — keep it ≤ RPE 8. Reuses the same TM if you saved it on the arm block.</div></div>
-<div class="prow"><div class="l">Rear / side delts</div><div class="r"><b>By feel, not load.</b> Light, strict, elbow-led. Chase the squeeze and the burn — never the weight.</div></div>
-<div class="prow"><div class="l">Everything else</div><div class="r"><b>Double progression:</b> top of the rep range on every set → add the smallest increment, drop to the bottom, climb again.</div></div>
+<div class="pcard"><h3>Elbow &amp; arm policy</h3>
+<div class="gd"><b>One heavy biceps day: Wednesday.</b> That’s it. Three curl days back-to-back is how tendons get angry — especially on a block where you’re already pressing three times a week.</div>
+<div class="gd"><b>Friday’s curls are light and optional</b> — 2 days after Wednesday, never adjacent. Elbows twinge? Skip them, lose nothing.</div>
+<div class="gd"><b>Triceps</b> get one real session (Mon) plus a light pump (Fri) — the pressing already does most of the work.</div>
+<div class="gd">Arms are on <b>maintenance</b> this block by design. You built them last cycle; you only need enough to hold them while the delts take the spotlight.</div>
 </div>
 
 <div class="pcard"><h3>Rear-delt playbook</h3>
-<div class="gd"><b>Row with the flare.</b> Elbows ~45° out and row to the collarbone, not the hips — that angle builds rear delts instead of lats.</div>
-<div class="gd"><b>Straight-arm to finish.</b> Reverse-fly / pec-deck and cable crosses isolate the rear delt with a deep stretch and a hard squeeze. Light, paused, strict.</div>
-<div class="gd"><b>Don’t let the traps steal it.</b> Ribs down, lead with the elbow, keep the neck long. If you feel it in the upper traps, drop the weight.</div>
-<div class="gd"><b>Frequency is the trick.</b> Rear delts are small and recover fast — a little every day beats one big blast.</div>
+<div class="gd"><b>Trained every upper day</b> — heavy rows Wed, flyes and face pulls Mon/Fri. ~20 sets/week, the leading volume in the block.</div>
+<div class="gd"><b>Row with the flare.</b> Elbows ~45° out, row to the collarbone not the hips — that angle builds rear delts instead of lats.</div>
+<div class="gd"><b>Chest-supported and cable/band only</b> — no machine required, nothing that loads the spine. An incline bench, a rope and a band cover every rear-delt movement in this block.</div>
+<div class="gd"><b>Don’t let the traps steal it.</b> Ribs down, lead with the elbow, neck long. Feel it in the upper traps? Drop the weight.</div>
 </div>
 
+<div class="pcard"><h3>5-week arc</h3>
+<div class="arc">
+<div class="a"><div class="w">Week 1</div><div class="x"><b>Ramp-in.</b> Press at 70%, delt volume at 2 sets. Re-groove, feel the rear delts.</div></div>
+<div class="a"><div class="w">Wk 2–4</div><div class="x"><b>Climb.</b> % up every week, press variation swaps at Wk 3, volume opens to full sets + finisher from Wk 3.</div></div>
+<div class="a"><div class="w">Week 5</div><div class="x"><b>Peak.</b> Back to variation A for a measurable top set; volume trimmed so the shoulders look full and fresh.</div></div>
+</div></div>
+
 <div class="pcard"><h3>Back &amp; surgery guardrails</h3>
-<div class="gd"><b>No axial loading.</b> Belt squat (hip-loaded) and seated / chest-supported everything — nothing loads the spine, no barbell overhead.</div>
+<div class="gd"><b>No axial loading.</b> Belt squat (hip-loaded), seated / chest-supported everything, <b>no barbell overhead</b> — the landmine loads a bar without ever putting it over your spine.</div>
 <div class="gd"><b>Week 1 is a ramp</b>, non-negotiable. Respect your surgical clearance before pushing the press.</div>
 <div class="gd">If sleep, joints, or the surgical site flag for ~3+ days, <b>insert a deload</b> (half the sets, ~60% load) and resume.</div>
 <div class="gd">A training template, <b>not medical advice</b> — clear the return-to-loading and overhead-press timeline with Dr. Cole before Week 1.</div>
 </div>`,
     nav:[
-      {t:'press',ico:'S', lb:'Press', c:'push2'},
-      {t:'rear', ico:'R', lb:'Rear',  c:'pull'},
-      {t:'vol',  ico:'V', lb:'Volume',c:'pm'},
-      {t:'lower',ico:'L', lb:'Lower', c:'legs'},
-      {t:'plan', ico:'★', lb:'Plan',  c:'ember2'}
+      {t:'press', ico:'S',  lb:'Press', c:'push2'},
+      {t:'lowerA',ico:'L',  lb:'Low A', c:'legs'},
+      {t:'rear',  ico:'R',  lb:'Rear',  c:'pull'},
+      {t:'lowerB',ico:'L²', lb:'Low B', c:'legs2'},
+      {t:'vol',   ico:'V',  lb:'Volume',c:'pm'},
+      {t:'plan',  ico:'★',  lb:'Plan',  c:'ember2'}
     ],
-    subs:{press:'Seated press anchor · front + side + rear',rear:'The heavy rear-delt day · back + biceps',vol:'3D delt pump · dumbbells · start small',lower:'Legs on maintenance · delt finisher',plan:'The 5-week delt blitz game plan'}
+    subs:{press:'Mon · rotating press · side + rear delts',lowerA:'Tue · quads + abs · the buffer day',rear:'Wed · heavy rear delts · the one elbow day',lowerB:'Thu · posterior chain + abs',vol:'Fri · delt pump · different press angle',plan:'The 5-week delt block game plan'}
   }
 };
 

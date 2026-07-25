@@ -10,9 +10,9 @@
       "id": "arm-bicep",
       "name": "Arm & Bicep",
       "subtitle": "8-Week Heavy Linear",
-      "focus": "Bench + arm size · post-surgery return · spine-friendly",
+      "focus": "Bench + arm size \u00b7 post-surgery return \u00b7 spine-friendly",
       "weeks": 8,
-      "split": "PPL — Push · Legs · Pull · Legs² · Push² (5x/week)",
+      "split": "PPL \u2014 Push \u00b7 Legs \u00b7 Pull \u00b7 Legs\u00b2 \u00b7 Push\u00b2 (5x/week)",
       "status": "active",
       "order": 1,
       "archive": "archive/arm-bicep-8wk-linear.v1.html",
@@ -24,14 +24,20 @@
     {
       "id": "shoulder-delt",
       "name": "Shoulder & Delt",
-      "subtitle": "5-Week Rear-Delt Blitz",
-      "focus": "Rear-delt-first · 3D delts · seated press anchor · spine-friendly",
+      "subtitle": "5-Week Rear-Delt Block",
+      "focus": "Rear-delt-first \u00b7 3D delts \u00b7 seated press anchor \u00b7 spine-friendly",
       "weeks": 5,
-      "split": "4-day blitz — Press · Rear Delt · Volume · Lower (~4x/week)",
-      "status": "draft-v1",
+      "split": "5-day upper/lower alternating \u2014 Mon Press \u00b7 Tue Lower A \u00b7 Wed Rear \u00b7 Thu Lower B \u00b7 Fri Volume",
+      "status": "draft-v2",
       "order": 2,
       "savedOn": "2026-07-25",
-      "note": "First draft authored 2026-07-25. Big rear-delt focus (rear delts trained all 4 days, ~25 sets/wk, leading volume). Heavy anchor = seated/supported shoulder press (% TM, no barbell overhead). Legs on maintenance, arms tick-over, same post-surgery guardrails as arm cycle. Flagged draft:true in the app pending Jason's review — confirm exercise selection / equipment (reverse pec-deck, V7) and dial volume."
+      "note": "Draft v2 (2026-07-25), revised per Jason's feedback: (1) NO pec-deck / reverse pec-deck and NO cable rear-delt cross - gym doesn't have them; rear delts run on chest-supported DB flyes, flared high rows, rope face pulls, band pull-aparts. (2) Biceps reduced to ONE heavy day (Wed) + one optional light day (Fri) - was 3 consecutive days, too much elbow volume. (3) Press variety: main anchor rotates in 2-week waves (A=Seated Neutral-Grip DB, B=Seated Landmine, Wk5 back to A to measure the PR) with % climbing weekly for linear progression; Friday uses a different angle (high-incline DB); laterals and rear flyes rotate weekly. (4) NEVER two upper days back to back - lower/abs day always between. Rear delts still lead (~20 sets/wk, trained every upper day).",
+      "equipment_excluded": [
+        "reverse pec-deck",
+        "pec-deck",
+        "cable rear-delt cross",
+        "barbell overhead press"
+      ]
     }
   ]
 }

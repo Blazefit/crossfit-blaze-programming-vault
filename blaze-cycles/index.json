@@ -1,0 +1,37 @@
+{
+  "library": "Blaze Training Cycles",
+  "owner": "jason@crossfitblaze.com",
+  "updated": "2026-07-25",
+  "liveUrl": "https://crossfitblaze.com/openclaw/blaze-ppl/",
+  "app": "blaze-app.html",
+  "notes": "Self-contained single-file HTML app. Each cycle is one entry in the CYCLES registry inside blaze-app.html. The bottom-nav hamburger (and the header chip) open the cycle switcher. Archived pristine copies live in ./archive/.",
+  "cycles": [
+    {
+      "id": "arm-bicep",
+      "name": "Arm & Bicep",
+      "subtitle": "8-Week Heavy Linear",
+      "focus": "Bench + arm size · post-surgery return · spine-friendly",
+      "weeks": 8,
+      "split": "PPL — Push · Legs · Pull · Legs² · Push² (5x/week)",
+      "status": "active",
+      "order": 1,
+      "archive": "archive/arm-bicep-8wk-linear.v1.html",
+      "createdFrom": "https://crossfitblaze.com/openclaw/blaze-ppl/",
+      "savedOn": "2026-07-25",
+      "worked_well": true,
+      "note": "First cycle. User reports this worked well for arms."
+    },
+    {
+      "id": "shoulder-delt",
+      "name": "Shoulder & Delt",
+      "subtitle": "5-Week Rear-Delt Blitz",
+      "focus": "Rear-delt-first · 3D delts · seated press anchor · spine-friendly",
+      "weeks": 5,
+      "split": "4-day blitz — Press · Rear Delt · Volume · Lower (~4x/week)",
+      "status": "draft-v1",
+      "order": 2,
+      "savedOn": "2026-07-25",
+      "note": "First draft authored 2026-07-25. Big rear-delt focus (rear delts trained all 4 days, ~25 sets/wk, leading volume). Heavy anchor = seated/supported shoulder press (% TM, no barbell overhead). Legs on maintenance, arms tick-over, same post-surgery guardrails as arm cycle. Flagged draft:true in the app pending Jason's review — confirm exercise selection / equipment (reverse pec-deck, V7) and dial volume."
+    }
+  ]
+}

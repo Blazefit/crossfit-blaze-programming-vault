@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0C10">
+<title>Blaze PPL · 8-Week Heavy Linear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0C10; --bg2:#0F131A; --card:#141A22; --card2:#1B222D; --line:#27303D;
+    --ink:#EAF0F7; --ink2:#94A2B4; --ink3:#5E6B7D;
+    --ember:#FF5A1F; --ember2:#FF8A3D;
+    --push:#4C8DFF; --pull:#46C46A; --legs:#F0A823; --yellow:#FFD23F; --pm:#B98AFF; --push2:#3EC7DE; --legs2:#E667B0;
+    --font-display:'Oswald','Arial Narrow',sans-serif;
+    --font-body:'Manrope',system-ui,-apple-system,sans-serif;
+    --font-mono:'JetBrains Mono',ui-monospace,monospace;
+    --accent:var(--push);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:calc(74px + env(safe-area-inset-bottom));
+    background-image:
+      radial-gradient(120% 60% at 50% -10%, rgba(255,90,31,.14), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
+    background-attachment:fixed;
+  }
+  .wrap{max-width:520px;margin:0 auto;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:30;
+    padding:calc(14px + env(safe-area-inset-top)) 18px 12px;
+    background:linear-gradient(180deg, rgba(10,12,16,.96), rgba(10,12,16,.82));
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand h1{
+    font-family:var(--font-display);font-weight:700;letter-spacing:.04em;
+    font-size:26px;margin:0;text-transform:uppercase;
+  }
+  .brand h1 .fire{color:var(--ember);}
+  .brand .badge{
+    margin-left:auto;font-family:var(--font-mono);font-size:10px;font-weight:700;
+    color:var(--ember2);border:1px solid rgba(255,90,31,.4);
+    padding:3px 7px;border-radius:6px;letter-spacing:.06em;
+    background:rgba(255,90,31,.08);
+  }
+  .brand .sub{font-size:12px;color:var(--ink2);margin:3px 0 0;letter-spacing:.02em;}
+
+  main{padding:16px 14px 8px;}
+  .view{display:none;animation:fade .45s ease both;}
+  .view.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+  /* Day banner */
+  .day-banner{
+    display:flex;align-items:center;gap:12px;margin:2px 2px 16px;
+  }
+  .day-banner .num{
+    font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;
+    color:var(--accent);min-width:34px;
+  }
+  .day-banner .t{font-family:var(--font-display);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.03em;}
+  .day-banner .tag{font-size:12px;color:var(--ink2);margin-top:1px;}
+
+  /* Cards / groups */
+  .group{
+    margin-bottom:14px;border-radius:16px;overflow:hidden;
+    background:var(--card);border:1px solid var(--line);
+    animation:rise .5s ease both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .group.main{
+    border-color:color-mix(in srgb,var(--accent) 55%, var(--line));
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent),
+               0 8px 30px -12px color-mix(in srgb,var(--accent) 60%,transparent);
+  }
+  .grp-label{
+    display:flex;align-items:center;gap:8px;
+    padding:9px 14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink2);background:var(--card2);border-bottom:1px solid var(--line);
+  }
+  .grp-label .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  .grp-label.main-l{color:var(--accent);}
+  .grp-label .hint{margin-left:auto;color:var(--ink3);font-weight:600;letter-spacing:.04em;text-transform:none;font-size:10.5px;}
+
+  .ex{padding:13px 14px;border-top:1px solid var(--line);}
+  .ex:first-of-type{border-top:none;}
+  .ex .top{display:flex;align-items:flex-start;gap:8px;}
+  .ex .name{font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:.01em;flex:1;line-height:1.15;}
+  .pill{font-size:9.5px;font-weight:700;letter-spacing:.07em;padding:3px 7px;border-radius:999px;text-transform:uppercase;white-space:nowrap;margin-top:2px;}
+  .pill.bi{color:#0A0C10;background:var(--ember2);}
+  .pill.main{color:#0A0C10;background:var(--accent);}
+  .pill.rear{color:#0A0C10;background:var(--push2);}
+  .pill.side{color:#0A0C10;background:var(--yellow);}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;}
+  .chip{font-family:var(--font-mono);font-size:12px;font-weight:700;padding:4px 9px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);}
+  .chip .k{color:var(--ink3);font-weight:500;margin-right:4px;}
+  .cue{font-size:12.5px;color:var(--ink2);margin-top:9px;line-height:1.45;}
+
+  /* Calculator */
+  .calc{margin:10px 14px 14px;background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:13px;}
+  .calc .tmrow{display:flex;align-items:center;gap:10px;}
+  .calc .tmrow label{font-size:10.5px;font-weight:700;letter-spacing:.09em;color:var(--ink2);text-transform:uppercase;flex:1;}
+  input.tm,input.est{
+    font-family:var(--font-mono);font-weight:700;font-size:17px;color:var(--yellow);
+    background:#0A0C10;border:1.5px solid color-mix(in srgb,var(--yellow) 45%,var(--line));
+    border-radius:9px;padding:9px 10px;width:96px;text-align:center;
+  }
+  input.tm:focus,input.est:focus{outline:none;border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,210,63,.15);}
+  input.est{width:100%;font-size:15px;}
+  details.est{margin-top:10px;}
+  details.est summary{font-size:12px;color:var(--accent);cursor:pointer;list-style:none;font-weight:600;}
+  details.est summary::-webkit-details-marker{display:none;}
+  .estgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+  .estgrid label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--ink3);text-transform:uppercase;margin-bottom:4px;}
+  .est-out{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:8px 11px;}
+  .est-out .v{font-family:var(--font-mono);font-weight:700;font-size:18px;color:var(--yellow);}
+  .use{margin-top:9px;width:100%;padding:9px;border:none;border-radius:9px;background:var(--accent);color:#06080C;font-family:var(--font-body);font-weight:700;font-size:13px;cursor:pointer;letter-spacing:.02em;}
+  .use:active{transform:scale(.985);}
+
+  /* TM save status */
+  .tmsave{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;min-height:16px;}
+  .tmstatus{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink3);}
+  .tmstatus.saved{color:var(--pull);}
+  .tmclear{background:none;border:1px solid var(--line);color:var(--ink2);font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:4px 9px;border-radius:7px;visibility:hidden;}
+  .tmclear:hover{color:var(--ember2);border-color:color-mix(in srgb,var(--ember) 45%,var(--line));}
+  .tmclear.show{visibility:visible;}
+
+  .wk{margin-top:13px;display:flex;flex-direction:column;gap:5px;}
+  .wk-row{display:grid;grid-template-columns:1.5fr .8fr .6fr 1fr;align-items:center;gap:6px;padding:8px 10px;border-radius:9px;background:var(--card);border:1px solid var(--line);}
+  .wk-row.hl{background:color-mix(in srgb,var(--accent) 14%,var(--card));border-color:color-mix(in srgb,var(--accent) 40%,var(--line));}
+  .wk-row .wlab{font-size:12px;font-weight:600;color:var(--ink);}
+  .wk-row .wlab small{display:block;font-size:9px;color:var(--ink3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+  .wk-row .pct{font-family:var(--font-mono);font-size:12px;color:var(--ink2);text-align:center;}
+  .wk-row .rep{font-family:var(--font-mono);font-size:12px;color:var(--ink2);text-align:center;}
+  .wk-row .lbs{font-family:var(--font-mono);font-weight:700;font-size:16px;text-align:right;color:var(--ink);}
+  .wk-row .lbs small{font-size:9px;color:var(--ink3);font-weight:500;}
+  .wk-head{display:grid;grid-template-columns:1.5fr .8fr .6fr 1fr;gap:6px;padding:0 10px 2px;}
+  .wk-head span{font-size:9px;font-weight:700;letter-spacing:.07em;color:var(--ink3);text-transform:uppercase;}
+  .wk-head span:nth-child(2),.wk-head span:nth-child(3){text-align:center;}
+  .wk-head span:nth-child(4){text-align:right;}
+
+  .note{font-size:11.5px;color:var(--ink2);line-height:1.5;margin:10px 14px 14px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--card);border-radius:0 10px 10px 0;}
+  .note.warn{border-left-color:var(--ember);}
+
+  /* Plan view */
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:12px;animation:rise .5s ease both;}
+  .pcard h3{font-family:var(--font-display);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px;color:var(--ember2);}
+  .arc{display:flex;flex-direction:column;gap:9px;}
+  .arc .a{display:flex;gap:11px;align-items:flex-start;}
+  .arc .a .w{font-family:var(--font-mono);font-weight:700;font-size:12px;color:var(--ember);min-width:60px;padding-top:1px;}
+  .arc .a .x{font-size:12.5px;color:var(--ink2);line-height:1.45;}
+  .arc .a .x b{color:var(--ink);font-weight:700;}
+  .prow{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--line);}
+  .prow:first-child{border-top:none;padding-top:0;}
+  .prow .l{font-size:12.5px;font-weight:700;color:var(--ink);min-width:104px;}
+  .prow .r{font-size:12px;color:var(--ink2);line-height:1.45;flex:1;}
+  .gd{font-size:12.5px;color:var(--ink2);line-height:1.5;padding-left:18px;position:relative;margin-bottom:9px;}
+  .gd::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:50%;background:var(--ember);}
+  .gd b{color:var(--ink);}
+
+  /* Bottom nav */
+  nav{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;
+    display:flex;max-width:520px;margin:0 auto;
+    background:rgba(15,19,26,.94);backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+  }
+  nav button{
+    flex:1;background:none;border:none;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;gap:4px;
+    padding:6px 2px;color:var(--ink3);font-family:var(--font-body);
+  }
+  nav button .ico{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.02em;line-height:1;}
+  nav button .lb{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+  nav button.on{color:var(--tabc);}
+  nav button.on .ico{text-shadow:0 0 18px color-mix(in srgb,var(--tabc) 70%,transparent);}
+  nav button::after{content:'';position:absolute;}
+  nav button.menu-btn .ico{font-size:21px;line-height:.9;}
+
+  /* Header cycle-switch chip */
+  .cyc-switch{
+    margin-top:10px;display:inline-flex;align-items:center;gap:8px;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px 5px 10px;cursor:pointer;color:var(--ink);
+    font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;
+  }
+  .cyc-switch:active{transform:scale(.98);}
+  .cyc-switch .cs-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);transition:background .3s;}
+  .cyc-switch .cs-car{color:var(--ink3);font-size:11px;margin-left:1px;}
+
+  /* Cycle switcher — sheet (mobile) / drawer (desktop) */
+  .sheet[hidden]{display:none;}
+  .sheet{position:fixed;inset:0;z-index:60;}
+  .sheet-scrim{position:absolute;inset:0;background:rgba(4,6,9,.62);backdrop-filter:blur(3px);animation:fade .22s ease;}
+  .sheet-panel{
+    position:absolute;left:0;right:0;bottom:0;max-width:520px;margin:0 auto;
+    background:var(--bg2);border:1px solid var(--line);border-bottom:none;
+    border-radius:22px 22px 0 0;padding:10px 16px calc(20px + env(safe-area-inset-bottom));
+    box-shadow:0 -24px 70px -24px #000;max-height:84vh;overflow:auto;
+    animation:sheetUp .3s cubic-bezier(.2,.85,.25,1);
+  }
+  @keyframes sheetUp{from{transform:translateY(100%);}to{transform:none;}}
+  .sheet-grip{width:38px;height:4px;border-radius:999px;background:var(--line);margin:2px auto 12px;}
+  .sheet-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+  .sheet-title{font-family:var(--font-display);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em;}
+  .sheet-sub{font-size:12px;color:var(--ink2);margin-top:2px;}
+  .sheet-x{margin-left:auto;background:var(--card);border:1px solid var(--line);color:var(--ink2);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;line-height:1;flex:none;}
+  .sheet-x:active{transform:scale(.94);}
+  .sheet-div{height:1px;background:var(--line);margin:16px 2px 12px;}
+  .sheet-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin:0 2px 9px;}
+  .cyc-list{display:flex;flex-direction:column;gap:9px;}
+  .cyc{
+    display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 13px;color:var(--ink);font-family:var(--font-body);
+  }
+  .cyc:active{transform:scale(.99);}
+  .cyc.on{border-color:color-mix(in srgb,var(--cc) 60%,var(--line));background:color-mix(in srgb,var(--cc) 9%,var(--card));box-shadow:0 0 0 1px color-mix(in srgb,var(--cc) 30%,transparent),0 12px 32px -16px color-mix(in srgb,var(--cc) 75%,transparent);}
+  .cyc-ic{width:42px;height:42px;flex:none;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:16px;color:#0A0C10;background:var(--cc,var(--ember2));}
+  .cyc.extra .cyc-ic{font-size:23px;}
+  .cyc-tx{flex:1;min-width:0;}
+  .cyc-n{font-family:var(--font-display);font-weight:600;font-size:16px;letter-spacing:.01em;display:flex;align-items:center;gap:8px;}
+  .cyc-badge{font-family:var(--font-mono);font-size:8.5px;font-weight:700;letter-spacing:.06em;padding:2px 6px;border-radius:5px;text-transform:uppercase;}
+  .cyc-badge.active{color:var(--pull);border:1px solid color-mix(in srgb,var(--pull) 45%,var(--line));}
+  .cyc-badge.draft{color:var(--ink3);border:1px solid var(--line);}
+  .cyc-f{font-size:12px;color:var(--ink2);margin-top:2px;line-height:1.35;}
+  .cyc-go{color:var(--ink3);font-size:20px;font-weight:700;flex:none;}
+  @media(min-width:900px){
+    .sheet-scrim{background:rgba(4,6,9,.5);}
+    .sheet-panel{
+      left:auto;right:0;top:0;bottom:0;margin:0;max-width:380px;max-height:none;
+      border-radius:0;border:none;border-left:1px solid var(--line);
+      padding:26px 20px calc(24px + env(safe-area-inset-bottom));
+      box-shadow:-30px 0 80px -30px #000;animation:drawerIn .3s cubic-bezier(.2,.85,.25,1);
+    }
+    @keyframes drawerIn{from{transform:translateX(100%);}to{transform:none;}}
+    .sheet-grip{display:none;}
+  }
+  /* ---- Training log / sync ---- */
+  .syncpill{
+    margin-left:8px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:4px 10px;color:var(--ink2);font-family:var(--font-mono);font-size:9.5px;
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .syncpill .sdot{width:7px;height:7px;border-radius:50%;background:var(--ink3);}
+  .syncpill.ok    .sdot{background:var(--pull);box-shadow:0 0 8px var(--pull);}
+  .syncpill.sync  .sdot{background:var(--yellow);animation:pulse 1s infinite;}
+  .syncpill.off   .sdot{background:var(--ink3);}
+  .syncpill.auth  .sdot{background:var(--ember);box-shadow:0 0 8px var(--ember);}
+  .syncpill.local .sdot{background:var(--pm);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  /* Week tracker */
+  .wkbar{
+    display:flex;align-items:center;gap:8px;margin:0 2px 14px;
+    background:var(--card);border:1px solid var(--line);border-radius:13px;padding:9px 11px;
+  }
+  .wkbar .wl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);}
+  .wkbar .wsel{display:flex;gap:5px;flex:1;flex-wrap:wrap;}
+  .wkbar .wbtn{
+    min-width:29px;padding:5px 7px;border-radius:8px;cursor:pointer;
+    background:var(--bg2);border:1px solid var(--line);color:var(--ink2);
+    font-family:var(--font-mono);font-size:12px;font-weight:700;
+  }
+  .wkbar .wbtn.on{background:var(--accent);border-color:var(--accent);color:#06080C;}
+  .wkbar .wbtn:active{transform:scale(.95);}
+
+  /* Per-exercise set log */
+  details.logbox{margin-top:10px;border-top:1px dashed var(--line);padding-top:9px;}
+  details.logbox summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+    font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
+  }
+  details.logbox summary::-webkit-details-marker{display:none;}
+  details.logbox summary .last{
+    margin-left:auto;font-family:var(--font-mono);font-size:11px;font-weight:500;
+    color:var(--ink3);letter-spacing:0;text-transform:none;
+  }
+  details.logbox summary .last b{color:var(--ink2);font-weight:700;}
+  details.logbox[open] summary{margin-bottom:9px;}
+  .setrow{display:grid;grid-template-columns:34px 1fr 14px 1fr;align-items:center;gap:7px;margin-bottom:6px;}
+  .setrow .sn{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.05em;}
+  .setrow .x{text-align:center;color:var(--ink3);font-size:11px;}
+  .setrow input{
+    font-family:var(--font-mono);font-weight:700;font-size:15px;color:var(--ink);
+    background:#0A0C10;border:1.5px solid var(--line);border-radius:8px;
+    padding:7px 8px;width:100%;text-align:center;
+  }
+  .setrow input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent);}
+  .setrow input.filled{color:var(--yellow);border-color:color-mix(in srgb,var(--yellow) 40%,var(--line));}
+  .sethead{display:grid;grid-template-columns:34px 1fr 14px 1fr;gap:7px;padding:0 0 3px;}
+  .sethead span{font-size:8.5px;font-weight:700;letter-spacing:.07em;color:var(--ink3);text-transform:uppercase;text-align:center;}
+  .sethead span:first-child{text-align:left;}
+  .lognote{width:100%;margin-top:4px;background:#0A0C10;border:1.5px solid var(--line);border-radius:8px;color:var(--ink2);font-family:var(--font-body);font-size:12.5px;padding:7px 9px;}
+  .lognote:focus{outline:none;border-color:var(--accent);}
+  .logmeta{display:flex;align-items:center;gap:8px;margin-top:7px;}
+  .logmeta .st{font-family:var(--font-mono);font-size:9.5px;color:var(--ink3);letter-spacing:.04em;}
+  .logmeta .st.saved{color:var(--pull);}
+
+  /* PIN dialog */
+  .pinwrap{padding:2px 0 4px;}
+  .pinwrap p{font-size:12.5px;color:var(--ink2);line-height:1.5;margin:0 0 12px;}
+  .pinwrap label{display:block;font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--ink3);text-transform:uppercase;margin:0 0 5px;}
+  .pinwrap input{
+    width:100%;font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--ink);
+    background:#0A0C10;border:1.5px solid var(--line);border-radius:9px;padding:10px 11px;margin-bottom:11px;
+  }
+  .pinwrap input:focus{outline:none;border-color:var(--accent);}
+  .pinbtn{width:100%;padding:11px;border:none;border-radius:10px;background:var(--accent);color:#06080C;font-family:var(--font-body);font-weight:700;font-size:14px;cursor:pointer;}
+  .pinbtn:active{transform:scale(.99);}
+  .pinbtn.ghost{background:none;border:1px solid var(--line);color:var(--ink2);margin-top:8px;}
+  .pinmsg{font-size:12px;margin-bottom:10px;min-height:16px;}
+  .pinmsg.err{color:var(--ember2);}
+  .pinmsg.ok{color:var(--pull);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>BLAZE<span class="fire">·</span><span id="cycleTag">PPL</span></h1>
+      <span class="badge" id="weekBadge">8-WK LINEAR</span>
+    </div>
+    <button class="cyc-switch" id="cycSwitch" type="button" aria-label="Switch cycle">
+      <span class="cs-dot"></span><span id="cycleName">Arm &amp; Bicep</span><span class="cs-car">▾</span>
+    </button><button class="syncpill auth" id="syncPill" type="button" aria-label="Training log sync"><span class="sdot"></span><span class="stx">Sign in</span></button>
+    <p class="sub" id="dsub">Heavy linear · post-surgery return · bench + arm-size priority</p>
+  </header>
+
+  <main id="main"></main>
+</div>
+
+<nav id="nav"></nav>
+
+<!-- Cycle switcher: bottom sheet on mobile, side drawer on desktop -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-scrim" data-close></div>
+  <aside class="sheet-panel" role="dialog" aria-label="Cycle library">
+    <div class="sheet-grip"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-title">Cycle Library</div>
+        <div class="sheet-sub">Choose a training focus</div>
+      </div>
+      <button class="sheet-x" data-close type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="cyc-list" id="cycList"></div>
+    <div class="sheet-div"></div>
+    <div class="sheet-label">Extras</div>
+    <button class="cyc extra" data-extra="pm" type="button" style="--cc:var(--pm)">
+      <div class="cyc-ic">＋</div>
+      <div class="cyc-tx"><div class="cyc-n">PM · Afternoon Add-Ons</div><div class="cyc-f">Optional bonus work · any cycle</div></div>
+      <div class="cyc-go">›</div>
+    </button>
+  </aside>
+</div>
+
+<script>
+const ACCENT={push:'var(--push)',pull:'var(--pull)',legs:'var(--legs)',legs2:'var(--legs2)',push2:'var(--push2)',plan:'var(--ember2)',pm:'var(--pm)'};
+
+const CALC={
+  bench:{round:5,weeks:[['Wk 1','ramp',70,5],['Wk 2','',72.5,5],['Wk 3','',75,5],['Wk 4','',77.5,5],['Wk 5','',80,5],['Wk 6','',82.5,5],['Wk 7','',85,5],['Wk 8','peak',87.5,3]]},
+  belt:{round:5,weeks:[['Wk 1','ramp',65,8],['Wk 2','',67.5,8],['Wk 3','',70,6],['Wk 4','',72.5,6],['Wk 5','',75,6],['Wk 6','',77.5,6],['Wk 7','',80,6],['Wk 8','peak',82.5,5]]}
+};
+
+const DAYS={
+  push:{n:'01',title:'Push',tag:'Bench priority · chest / delts / triceps · biceps + unilateral ✦ woven in',groups:[
+    {type:'main',items:[{name:'Barbell Bench Press',sr:'4 sets @ %',rest:'3 min',cue:'The bench focus. Work all 4 sets at the week’s %. Week 1 is a 70% ramp — clean reps, nothing near failure.',calc:'bench',pill:'main'}]},
+    {type:'ss',label:'Superset A',items:[
+      {name:'GMWD Incline Press (V7)',sr:'3 × 8–10',rest:'—',cue:'Seat at 30–45°, high grip = upper chest. Converging arc like a DB press but back fully supported — safe to push near the cap. Until the V7 lands, skip this line — the Incline DB Press below covers it.'},
+      {name:'Incline DB Press',sr:'3 × 8–10',rest:'—',cue:'Upper-chest depth — control the stretch at the bottom. Pairs with the V7: the machine gives a guided heavy arc, the DBs make each side work alone and stretch deeper.'},
+      {name:'Single-Arm Cable Lateral Raise',sr:'3 × 12–15 /side',rest:'90s',cue:'✦ Unilateral swap — one cable, one side. Brace on the frame, lead with the elbow, no swing. Fixes the weaker delt directly.'}]},
+    {type:'ss',label:'Superset B',items:[
+      {name:'Close-Grip Bench',sr:'3 × 8',rest:'—',cue:'Triceps + lockout strength — feeds the bench. (Alt: weighted dip, or V7 flat press on the low grip.)'},
+      {name:'EZ-Bar Curl',sr:'3 × 8–10',rest:'90s',cue:'Fresh here, antagonist to the pressing. Strict reps.',pill:'bi'}]},
+    {type:'ss',label:'Superset C',items:[
+      {name:'Single-Arm Overhead DB Triceps Ext',sr:'3 × 10–12 /side',rest:'—',cue:'✦ Unilateral swap — long-head stretch, the arm-size driver, now one side at a time. Seated, DB overhead (no barbell). Evens out the triceps.'},
+      {name:'Cable Curl',sr:'2 × 12–15',rest:'60s',cue:'Constant-tension finisher, full squeeze.',pill:'bi'}]},
+    {type:'ss',label:'Core Finisher',items:[
+      {name:'Hanging Leg Raise',sr:'3 × 12–15',rest:'60s',cue:'Controlled flexion, no load on the spine. Lower slow — no swing. (Alt: lying leg raise.)'},
+      {name:'Cable Crunch',sr:'3 × 15',rest:'60s',cue:'Round down through the abs, hips fixed. Smooth tempo, full squeeze.'}]}
+  ]},
+  pull:{n:'03',title:'Pull',tag:'Back + biceps emphasis · the HEAVY biceps day · spine-friendly · unilateral ✦',groups:[
+    {type:'main',items:[{name:'Weighted Pull-Up',sr:'4 × 5',rest:'3 min',cue:'Spine-friendly vertical pull. Load-based, not %: add weight when 4×5 is clean (or +reps, then reset). Alt: heavy lat pulldown.',pill:'main'}]},
+    {type:'ss',label:'Back Block',items:[
+      {name:'Lat Pulldown',sr:'3 × 10–12',rest:'—',cue:'Second vertical pull — wide or neutral grip, a different angle than the weighted pull-up. Seated and spine-friendly: stretch overhead, drive the elbows to the ribs, chase lat width.'},
+      {name:'Single-Arm Chest-Supported DB Row',sr:'3 × 8–10 /side',rest:'—',cue:'✦ Unilateral swap — chest on the incline bench, zero spinal load. One side at a time so the strong lat can’t take over. Squeeze, don’t yank.'},
+      {name:'Single-Arm Lat Pulldown',sr:'3 × 10–12 /side',rest:'—',cue:'✦ Unilateral add — one cable, half-seated and supported. Full overhead stretch to the ribs; chases lat width and erases the left/right gap on vertical pulling.'},
+      {name:'Face Pull / Rear Delt',sr:'3 × 15',rest:'90s',cue:'Rear delt + shoulder health. Pull to the forehead.'}]},
+    {type:'ss',label:'Superset B',items:[
+      {name:'EZ-Bar / BB Curl',sr:'3 × 8–10',rest:'—',cue:'The HEAVY biceps anchor. Micro-load weekly.',pill:'bi'},
+      {name:'Single-Arm DB Hammer Curl',sr:'3 × 10–12 /side',rest:'90s',cue:'✦ Unilateral swap — brachialis = arm thickness, now one side at a time so the dominant arm can’t carry the set. Neutral grip, no swing.',pill:'bi'}]},
+    {type:'ss',label:'Superset C',items:[
+      {name:'Incline DB Curl',sr:'2 × 12',rest:'—',cue:'Stretched position — let the arms hang back.',pill:'bi'},
+      {name:'Single-Arm Straight-Arm Cable Pulldown',sr:'2 × 15 /side',rest:'60s',cue:'✦ Unilateral swap — lat finisher, one cable per side. Soft elbow, drive with the lat, feel each side work independently.'}]},
+    {type:'ss',label:'Core Finisher',items:[
+      {name:'Pallof Press',sr:'3 × 10–12 /side',rest:'60s',cue:'Anti-rotation — resist the cable twisting you. Back-safe brace work, ribs down.'},
+      {name:'Hanging Knee Raise',sr:'3 × 12–15',rest:'60s',cue:'Knees to chest, control the descent. (Alt: dead bug 3 × 10 /side.)'}]}
+  ]},
+  legs:{n:'02',title:'Legs',tag:'Belt squat anchor · maintenance volume · unilateral ✦ · + quad pump finisher',groups:[
+    {type:'main',items:[{name:'Belt Squat',sr:'4 sets @ %',rest:'2–3 min',cue:'Hip-loaded, zero axial load. Work at the week’s % — TM is an estimate, keep effort ≤ RPE 8.',calc:'belt',pill:'main'}]},
+    {type:'ss',label:'Superset A',items:[
+      {name:'Bulgarian Split Squat',sr:'3 × 8–10 /leg',rest:'—',cue:'Your favorite. Long stride, knee tracks the toe.'},
+      {name:'Single-Leg Seated Leg Curl',sr:'3 × 10–12 /leg',rest:'90s',cue:'✦ Unilateral swap — one leg at a time on the seated curl machine. Chest on the pad, lap bar snug. Pause the squeeze, slow the negative; balances the weaker hamstring.'}]},
+    {type:'ss',label:'Superset B',items:[
+      {name:'Single-Leg Leg Extension',sr:'3 × 12–15 /leg',rest:'—',cue:'✦ Unilateral swap — your favorite, one leg at a time. 1-second hold at the top; the weak side can’t hide.'},
+      {name:'B-Stance Belt Squat',sr:'3 × 10–12 /leg',rest:'—',cue:'✦ Unilateral add — kickstand stance on the belt squat, back foot just for balance, ~70/30 on the front leg. Drive through the front heel, squeeze the glute at the top. All the single-leg glute work, none of the hip-thrust pattern, zero spinal load.'},
+      {name:'Single-Leg Calf Raise',sr:'3 × 12–15 /leg',rest:'60s',cue:'✦ Unilateral swap — one leg, hold a DB in that hand for load. Full stretch + pause at the top. (Alt: seated single-leg calf if you’d rather not stand.)'}]},
+    {type:'ss',label:'Leg Pump Finisher',items:[
+      {name:'Backward Sled Drag',sr:'3 × 20–30 yd',rest:'—',cue:'Strap up and walk backward — pure quad pump, no eccentric to recover from, nothing on the spine. Great for the knees too.'},
+      {name:'Wall Sit',sr:'2 × 30–45s',rest:'60s',cue:'Back flat against the wall — spine fully supported, quads on fire. Add a plate on the thighs when 45s gets easy.'}]},
+    {type:'ss',label:'Core Finisher',items:[
+      {name:'Plank',sr:'3 × 45–60s',rest:'45s',cue:'Anti-extension hold. Ribs down, glutes tight, spine neutral — don’t let the hips sag.'},
+      {name:'Side Plank',sr:'3 × 30–40s /side',rest:'45s',cue:'Anti-lateral-flexion. Stack the hips, lift tall, hold steady.'}]}
+  ]},
+  legs2:{n:'04',title:'Legs²',tag:'Lower-body mass builder · quads + hams + glutes · spine-safe, no %',
+    note:'<b>Start small, build slow.</b> Second leg day, same rules as Push². Weeks 1–2: just <b>2 sets</b> per movement, no Pump Finisher. Weeks 3–4: full 3 sets, still no finisher. Week 5+: add the finisher. Week 8: back to 2 sets, no finisher — stay fresh for the peak. Nothing past RPE 8.',
+    groups:[
+    {type:'main',label:'Main lift · mass sets',hint:'full rest',items:[{name:'Belt Squat — Mass Sets',sr:'3 × 10–12',rest:'2–3 min',cue:'Same machine as Legs day, different job: this is the size stimulus. 3-count lowering, smooth drive up, RPE ≤ 8. Hip-loaded — nothing on the spine, nothing to flare the back up. No %: when every set hits 12 clean, add load and drop back to 10.',pill:'main'}]},
+    {type:'ss',label:'Superset A',items:[
+      {name:'Band-Assisted Nordic Curl',sr:'3 × 6–10',rest:'—',cue:'Kneel on a pad, band from the rig to your chest, hips locked straight. Lower as slow as you can, pull back with the hamstrings — the eccentric is the mass builder. Spine stays rigid and unloaded. (Too spicy? Slider curls until the band assist feels right.)'},
+      {name:'Belt Squat Calf Raise',sr:'3 × 12–15',rest:'90s',cue:'Stand tall on the belt squat — heavy calf loading straight through the hips, zero spinal compression. Toes on a plate for the deep stretch, 1-second pause at the top.'}]},
+    {type:'ss',label:'Superset B',items:[
+      {name:'DB Step-Up (box)',sr:'3 × 8–10 /leg',rest:'—',cue:'Knee-height box, DBs at your sides, chest tall. Drive through the top heel, control the way down — quad + glute mass without a bar anywhere near your back.'},
+      {name:'Banded Lateral Walk',sr:'2 × 15 steps /side',rest:'60s',cue:'Band above the knees, stay low, wide steps. Glute med — the stabilizer that keeps knees and hips honest.'}]},
+    {type:'ss',label:'Pump Finisher (wk 5+)',items:[
+      {name:'Banded / Slider Leg Curl',sr:'2 × 15–20',rest:'—',cue:'Heels on sliders or a band around the rig — hamstring burnout, zero setup. Hips up, pull the heels in slow. (Alt: machine leg-curl burnout, 2 × 15–20.)'},
+      {name:'Leg Extension Drop Set',sr:'2 × 12 + drop',rest:'60s',cue:'Hit 12, drop ~30%, rep out shy of failure. 1-second hold at the top — quads respond to the burn.'}]},
+    {type:'ss',label:'Core Finisher',items:[
+      {name:'McGill Curl-Up',sr:'3 × 5 /side',rest:'—',cue:'Hands under the low back, one knee bent — curl the sternum up, neck neutral. The back-surgeon-approved crunch.'},
+      {name:'Side Plank + Reach',sr:'3 × 20–30s /side',rest:'45s',cue:'Side plank with a slow reach-through and open. Anti-lateral-flexion plus a little rotation control.'}]}
+  ]},
+  push2:{n:'05',title:'Push²',tag:'Chest + shoulder hypertrophy + biceps pump · dumbbells · RPE-capped, no %',
+    note:'<b>Start small, build slow.</b> A hypertrophy add-on day on a returning body. Weeks 1–2: just <b>2 sets</b> per movement, no Pump Finisher. Weeks 3–4: full 3 sets, still no finisher. Week 5+: add the finisher. Week 8: back to 2 sets, no finisher — stay fresh for the bench realization. Nothing past RPE 8 (always ~2 clean reps left).',
+    groups:[
+    {type:'main',label:'Top press · double progression',hint:'full rest',items:[{name:'Flat DB Bench Press',sr:'3 × 8–12',rest:'2–3 min',cue:'All pressing today is dumbbells — friendlier on the shoulders and the surgical area, deeper stretch for growth. No % here: when every set hits 12 clean, take the next DBs up and drop back to 8.',pill:'main'}]},
+    {type:'ss',label:'Superset A',items:[
+      {name:'Low-Incline DB Press',sr:'3 × 10–12',rest:'—',cue:'Slight incline (15–30°) — upper chest without turning it into a shoulder press. Different angle + higher reps than Push day. Control the stretch, don’t bounce.'},
+      {name:'Seated DB Lateral Raise',sr:'3 × 12–15',rest:'90s',cue:'Seated on the upright bench so the low back stays out of it. Both arms here — the single-arm version lives on Push day. Side delts = width. Lead with the elbows, no swing.'}]},
+    {type:'ss',label:'Superset B',items:[
+      {name:'Seated DB Shoulder Press',sr:'3 × 8–12',rest:'—',cue:'Back flat against the upright bench — zero spinal load, no standing, no barbell. Full range without grinding. (Once the V7 lands, its 75–85° shoulder press is a great swap — same back support, guided arc.)'},
+      {name:'DB Fly (Flat or Low-Incline)',sr:'3 × 12–15',rest:'90s',cue:'The stretch IS the stimulus — deep, slow negative, soft elbows, no clanking at the top. Don’t chase heavy; chase the stretch.'}]},
+    {type:'ss',label:'Biceps Finisher',items:[
+      {name:'Preacher / Spider Curl',sr:'2 × 12–15',rest:'—',cue:'Moved here from Legs day so biceps land Mon / Wed / Fri — never three days straight. Light pump: short range, constant tension, no ego.',pill:'bi'},
+      {name:'Concentration / Cable Curl',sr:'2 × 15–20',rest:'60s',cue:'Chase the burn. Pure metabolite work, easy on the tendon.',pill:'bi'}]},
+    {type:'ss',label:'Pump Finisher (wk 5+)',items:[
+      {name:'DB Squeeze Press',sr:'2 × 12–15',rest:'—',cue:'Press the DBs together the whole set — constant inner-chest tension, no machine needed. Slow negative, never rest at lockout. (Alt: deficit push-up on the DBs, stop 2 shy of failure.)'},
+      {name:'Chest-Supported DB Y-Raise',sr:'2 × 12–15',rest:'60s',cue:'Chest down on the low-incline bench, light DBs, thumbs up, raise to a Y. A different angle than the lateral raise — upper delts + lower traps, spine fully supported. Light is right.'}]},
+    {type:'ss',label:'Core Finisher',items:[
+      {name:'Dead Bug',sr:'3 × 10 /side',rest:'—',cue:'Low back pinned to the floor, slow opposite arm/leg. Anti-extension, zero spinal load.'},
+      {name:'Bird Dog',sr:'3 × 8 /side',rest:'45s',cue:'Slow and square — hips level, reach long. Back-safe stability to close the week.'}]}
+  ]}
+};
+
+function round5(x,m){return Math.round(x/m)*m;}
+
+function exHTML(e,dayKey){
+  const pill=e.pill==='bi'?'<span class="pill bi">Biceps</span>':e.pill==='main'?'<span class="pill main">Main</span>':e.pill==='rear'?'<span class="pill rear">Rear Δ</span>':e.pill==='side'?'<span class="pill side">Side Δ</span>':'';
+  return `<div class="ex">
+    <div class="top"><div class="name">${e.name}</div>${pill}</div>
+    <div class="chips"><span class="chip"><span class="k">SETS</span>${e.sr}</span><span class="chip"><span class="k">REST</span>${e.rest}</span></div>
+    <div class="cue">${e.cue}</div>
+    ${e.calc?calcHTML(e.calc):''}
+    ${dayKey?logHTML(e,dayKey):''}
+  </div>`;
+}
+function calcHTML(id){
+  return `<div class="calc" data-calc="${id}">
+    <div class="tmrow"><label>Training Max (lb)</label><input class="tm" type="number" inputmode="numeric" placeholder="—"></div>
+    <div class="tmsave"><span class="tmstatus">Saves on this device</span><button class="tmclear" type="button">Reset</button></div>
+    <details class="est"><summary>Don’t know your TM? Estimate it ▸</summary>
+      <div class="estgrid">
+        <div><label>Wk-1 weight</label><input class="est ew" type="number" inputmode="numeric" placeholder="lb"></div>
+        <div><label>reps done</label><input class="est er" type="number" inputmode="numeric" placeholder="reps"></div>
+        <div class="est-out"><label style="margin:0">Suggested TM</label><span class="v etm">—</span></div>
+      </div>
+      <button class="use">Use this TM</button>
+    </details>
+    <div class="wk-head"><span>Week</span><span>%</span><span>Reps</span><span>Target</span></div>
+    <div class="wk"></div>
+  </div>`;
+}
+function groupHTML(g,dayKey){
+  if(g.type==='main'){
+    return `<div class="group main"><div class="grp-label main-l"><span class="dot"></span>${g.label||'Main lift · straight heavy sets'} <span class="hint">${g.hint||'full rest'}</span></div>${g.items.map(x=>exHTML(x,dayKey)).join('')}</div>`;
+  }
+  return `<div class="group"><div class="grp-label"><span class="dot"></span>${g.label}<span class="hint">⇄ back to back</span></div>${g.items.map(x=>exHTML(x,dayKey)).join('')}</div>`;
+}
+function renderDay(key){
+  const d=ACTIVE.days[key];
+  return `<div class="day-banner"><div class="num">${d.n}</div><div><div class="t">${d.title} Day</div><div class="tag">${d.tag}</div></div></div>${d.note?`<div class="note warn">${d.note}</div>`:''}${weekBarHTML(ACTIVE)}${d.groups.map(g=>groupHTML(g,key)).join('')}`;
+}
+
+function renderWeeks(calcEl){
+  const id=calcEl.dataset.calc, cfg=ACTIVE.calc[id];
+  const tm=parseFloat(calcEl.querySelector('.tm').value);
+  const wk=calcEl.querySelector('.wk');
+  const curW=(typeof ACTIVE!=='undefined'&&typeof cycleWeek==='function')?cycleWeek(ACTIVE.id):0;
+  wk.innerHTML=cfg.weeks.map(([w,tagi,pct,reps],wi)=>{
+    const hl=(wi+1===curW)?'hl':(tagi?'hl':'');
+    const lbs=(tm&&tm>0)?round5(tm*pct/100,cfg.round)+'<small> lb</small>':'—';
+    const sub=tagi?`<small>${tagi}</small>`:'';
+    return `<div class="wk-row ${hl}"><div class="wlab">${w}${sub}</div><div class="pct">${pct}%</div><div class="rep">×${reps}</div><div class="lbs">${lbs}</div></div>`;
+  }).join('');
+}
+function renderEst(calcEl){
+  const w=parseFloat(calcEl.querySelector('.ew').value), r=parseFloat(calcEl.querySelector('.er').value);
+  const out=calcEl.querySelector('.etm');
+  if(w>0&&r>0){const e1=w*(1+r/30);out.textContent=round5(e1*0.9,5)+' lb';calcEl._suggest=round5(e1*0.9,5);}
+  else{out.textContent='—';calcEl._suggest=null;}
+}
+
+const PLAN=`
+<div class="pcard"><h3>How this block works</h3>
+<div class="arc">
+<div class="a"><div class="w">5× / week</div><div class="x">One rotation: <b>Push · Legs · Pull · Legs² · Push²</b> (e.g. Mon–Fri, weekends off). The two leg days are split by Pull; Push² closes the week so the heavy bench gets 72h after it.</div></div>
+<div class="a"><div class="w">Push²</div><div class="x"><b>The upper hypertrophy add-on</b> — all-dumbbell chest + shoulder volume, RPE-capped, no % table. Starts deliberately small: 2 sets per movement for the first 2 weeks.</div></div>
+<div class="a"><div class="w">Legs²</div><div class="x"><b>The lower hypertrophy add-on</b> — belt-squat mass sets plus hamstring, glute and calf volume. Same rules: RPE-capped, no %, same staged 2-set start.</div></div>
+<div class="a"><div class="w">Heavy</div><div class="x">Priority lifts run as <b>straight heavy sets</b>, full rest — that’s where the linear progression lives.</div></div>
+<div class="a"><div class="w">Supersets</div><div class="x">Carry the accessory + arm work, done back-to-back. The engine here is <b>upper body + arms</b>.</div></div>
+<div class="a"><div class="w">Unilateral ✦</div><div class="x">Single-arm / single-leg work woven into <b>Push, Pull and Legs</b> — swaps and targeted adds where they fit — to hunt down and fix left/right imbalances. Marked with <b>✦</b> on the cards. (Push² stays bilateral on purpose — simple and fast.) All seated or supported, no overhead barbell.</div></div>
+<div class="a"><div class="w">Biceps 3×</div><div class="x"><b>~17 sets/week</b> — moderate on Push (Mon), heavy on Pull (Wed), pump on Push² (Fri). Spread across the week, never on back-to-back days.</div></div>
+<div class="a"><div class="w">Core 5×</div><div class="x"><b>Spine-friendly</b> finisher each day — controlled flexion (Push), anti-rotation (Pull), anti-extension/isometric (Legs), floor-based stability (Push²), McGill curl-up + side plank (Legs²). No loaded spinal work, post-surgery safe.</div></div>
+</div></div>
+
+<div class="pcard"><h3>8-week arc</h3>
+<div class="arc">
+<div class="a"><div class="w">Week 1</div><div class="x"><b>Ramp-in.</b> ~10–15% under your true working weight. No failure. Re-groove the patterns — the post-surgery tissue check.</div></div>
+<div class="a"><div class="w">Wk 2–7</div><div class="x"><b>Linear climb.</b> Load goes up each week on the mains; accessories progress by double-progression.</div></div>
+<div class="a"><div class="w">Week 8</div><div class="x"><b>Realization.</b> Heavy bench triple / rep PR; accessory volume trimmed ~30% so you’re fresh.</div></div>
+</div></div>
+
+<div class="pcard"><h3>Loading — % of max</h3>
+<div class="prow"><div class="l">Bench / Belt Squat</div><div class="r">% of a <b>Training Max</b> (not 1RM). Enter your TM on the day card — weights compute live.</div></div>
+<div class="prow"><div class="l">Your TM</div><div class="r">Set it <b>conservatively</b> post-surgery. Use the built-in estimator: a clean Wk-1 set → suggested TM (~90% of est. 1RM).</div></div>
+<div class="prow"><div class="l">Pull-up</div><div class="r"><b>Load-based, not %.</b> Add weight or reps. % of a 1RM is meaningless for bodyweight + load.</div></div>
+<div class="prow"><div class="l">Push² &amp; Legs²</div><div class="r"><b>No % — double progression at RPE ≤ 8.</b> Top of the rep range on every set → add load, back to the bottom, climb again.</div></div>
+<div class="prow"><div class="l">All curls / accessories</div><div class="r"><b>Double progression:</b> hit the top of the rep range on every set → add the smallest increment, drop to the bottom, climb again.</div></div>
+</div>
+
+<div class="pcard"><h3>Back &amp; surgery guardrails</h3>
+<div class="gd"><b>No axial loading.</b> Belt squat (hip-loaded) and vertical / chest-supported pulling replace anything that loads the spine.</div>
+<div class="gd"><b>Week 1 is non-negotiable</b> as a ramp. Respect your surgical clearance — regress range/load before pushing through the surgical area.</div>
+<div class="gd">If sleep, joints, or the site flag for ~3+ days, <b>insert a deload</b> (half the sets, ~60% load) and resume.</div>
+<div class="gd">A training template, <b>not medical advice</b> — clear the return-to-loading timeline with whoever did the surgery / Dr. Cole before Week 1.</div>
+</div>`;
+
+const PM=`
+<div class="day-banner"><div class="num">PM</div><div><div class="t">Afternoon Add-Ons</div><div class="tag">Always optional · quick &amp; light · never counts toward the program</div></div></div>
+
+<div class="note warn">Morning is the program. This is bonus only — if you've got 5–15 min in the afternoon and feel good, pick a menu or two. Keep it light, never to failure, and skip it any day with zero guilt.</div>
+
+<div class="group"><div class="grp-label"><span class="dot"></span>Arm Pump<span class="hint">pick any · ~5 min</span></div>
+  <div class="ex"><div class="top"><div class="name">Band / Cable Curl</div><span class="pill bi">Biceps</span></div><div class="chips"><span class="chip"><span class="k">SETS</span>2–3 × 15–20</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Greasing the groove for arm size. High reps, constant tension — leave 3–4 in the tank.</div></div>
+  <div class="ex"><div class="top"><div class="name">Band / Cable Pushdown</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>2–3 × 15–20</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Triceps pump to balance the curls. Smooth, full lockout.</div></div>
+</div>
+
+<div class="group"><div class="grp-label"><span class="dot"></span>Core <span class="hint">if you skipped AM · ~5 min</span></div>
+  <div class="ex"><div class="top"><div class="name">Dead Bug</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>2 × 10 /side</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Anti-extension, low back pinned to the floor. Slow and controlled.</div></div>
+  <div class="ex"><div class="top"><div class="name">Side Plank</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>2 × 30s /side</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Back-safe anti-lateral-flexion. Stack the hips, hold steady.</div></div>
+</div>
+
+<div class="group"><div class="grp-label"><span class="dot"></span>Shoulder &amp; Back Health<span class="hint">pick any · ~5 min</span></div>
+  <div class="ex"><div class="top"><div class="name">Band Pull-Apart</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>2 × 20</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Bulletproofs the upper back — great on a screen-heavy day. Squeeze the blades.</div></div>
+  <div class="ex"><div class="top"><div class="name">Face Pull</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>2 × 15</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Rear delts + shoulder health. Pull to the forehead, elbows high.</div></div>
+</div>
+
+<div class="group"><div class="grp-label"><span class="dot"></span>Easy Conditioning<span class="hint">pick any · 15–20 min</span></div>
+  <div class="ex"><div class="top"><div class="name">Zone-2 Walk / Bike</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>15–20 min</span><span class="chip"><span class="k">REST</span>—</span></div><div class="cue">Conversational pace. Builds the engine without denting recovery.</div></div>
+  <div class="ex"><div class="top"><div class="name">Standing Calf Raise</div></div><div class="chips"><span class="chip"><span class="k">SETS</span>3 × 20</span><span class="chip"><span class="k">REST</span>short</span></div><div class="cue">Easy extra calf volume. Full stretch, pause at the top.</div></div>
+</div>`;
+
+/* ============================================================
+   CYCLE LIBRARY — each entry is one rotate-able program.
+   Add a cycle by adding an object here; the ☰ menu picks it up.
+   ============================================================ */
+const CYCLES={
+  'arm-bicep':{
+    id:'arm-bicep', name:'Arm & Bicep', tag:'PPL', badge:'8-WK LINEAR',
+    focus:'Bench + arm size · post-surgery return',
+    color:'var(--push)',
+    sub:'Heavy linear · post-surgery return · bench + arm-size priority',
+    days:DAYS, calc:CALC, plan:PLAN,
+    nav:[
+      {t:'push', ico:'P',  lb:'Push',  c:'push'},
+      {t:'legs', ico:'L',  lb:'Legs',  c:'legs'},
+      {t:'pull', ico:'P',  lb:'Pull',  c:'pull'},
+      {t:'legs2',ico:'L²', lb:'Legs²', c:'legs2'},
+      {t:'push2',ico:'P²', lb:'Push²', c:'push2'},
+      {t:'plan', ico:'★',  lb:'Plan',  c:'ember2'}
+    ],
+    subs:{push:'Heavy linear · bench + arm-size priority',pull:'Heavy biceps day · back + arms',legs:'Maintenance lower · quads + unilateral work',legs2:'Lower-body mass day · start small',push2:'DB chest + delts + biceps pump · start small',plan:'The full 8-week game plan'}
+  },
+  'shoulder-delt':{
+    id:'shoulder-delt', name:'Shoulder & Delt', tag:'DELT', badge:'5-WK DELT',
+    focus:'Rear-delt-first · rotating press · upper/lower alternating',
+    color:'var(--push2)', draft:true,
+    sub:'Rear-delt-first · 5-week delt block · rotating press variations',
+    calc:{
+      ohp:{round:5,weeks:[['Wk 1','A · ramp',70,6],['Wk 2','A',74,6],['Wk 3','B',77,5],['Wk 4','B',80,5],['Wk 5','A · peak',83,4]]},
+      belt:{round:5,weeks:[['Wk 1','ramp',65,8],['Wk 2','',67.5,8],['Wk 3','',70,6],['Wk 4','',72.5,6],['Wk 5','hold',72.5,6]]}
+    },
+    days:{
+      press:{n:'01',title:'Press',tag:'MON · upper · rotating press anchor · side + rear delts · triceps',
+        note:'<b>Press rotates in 2-week waves.</b> Wks 1–2 = <b>A: Seated Neutral-Grip DB Press</b>. Wks 3–4 = <b>B: Seated Landmine Press</b>. Wk 5 = back to <b>A</b> so you can measure the PR against Week 1. The % ladder climbs every week regardless — that’s the linear progression; the variation is what keeps the stimulus fresh. Same TM across both; expect B to feel ~5% different, adjust and note it. <b>No curls today</b> — elbows get one heavy day (Wed) only.',
+        groups:[
+        {type:'main',label:'Main press · A/B wave · straight heavy sets',hint:'full rest',items:[
+          {name:'Seated Press — Wave A / B',sr:'4 sets @ %',rest:'3 min',cue:'<b>Wks 1–2 &amp; 5 (A): Seated Neutral-Grip DB Press.</b> Palms facing in — the shoulder-friendliest vertical press, back flat on the upright bench.<br><b>Wks 3–4 (B): Seated Landmine Press.</b> Bar in the corner/landmine, seated on a low box or bench with the chest tall — the angled arc is easier on the joint than true vertical, and it loads a barbell without ever putting it over your spine.<br>Both: zero spinal load, no barbell overhead. Week 1 is a 70% ramp — clean reps, nothing near failure. (When the V7 lands, its 75–85° guided press is a legitimate third variation — sub it in for a wave.)',calc:'ohp',pill:'main'}]},
+        {type:'ss',label:'Rear-Delt Opener',items:[
+          {name:'Chest-Supported DB Rear Fly',sr:'3 × 15–20',rest:'—',cue:'We open every upper day with rear delts. Chest down on a 30–45° incline bench, DBs hanging straight down, elbows lead a wide arc out and back. Squeeze the back of the shoulder, pause a beat, lower slow. Feel it there — not in the traps. Light is right.',pill:'rear'},
+          {name:'Rope Face Pull (elbows high)',sr:'3 × 15–20',rest:'90s',cue:'Rear delt + rotator-cuff health. Pull the rope to the forehead with the elbows above the wrists, spread hard at the end. Owns the back of the shoulder.',pill:'rear'}]},
+        {type:'ss',label:'Side-Delt Width · weekly rotation',items:[
+          {name:'Lateral Raise — rotates weekly',sr:'3 × 12–15',rest:'—',cue:'<b>Wk 1: Seated DB Lateral.</b> Strict, seated, low back out of it.<br><b>Wk 2: Single-Arm Cable Lateral (lean-away).</b> ✦ Longest arc, constant tension.<br><b>Wk 3: DB Lateral + top partials.</b> Full reps to the cap, then pulse the top third.<br><b>Wk 4: Seated Cable Lateral (both sides).</b> Tension through the bottom.<br><b>Wk 5: Single-Arm Cable Lateral.</b> Back to the Wk-2 movement — beat that number.<br>Every version: lead with the elbow, no swing, no ego.',pill:'side'},
+          {name:'Band Pull-Apart',sr:'3 × 20',rest:'90s',cue:'Cheap, joint-friendly rear-delt and upper-back volume. Arms straight-ish, pull to the chest, squeeze the blades. No cable needed.',pill:'rear'}]},
+        {type:'ss',label:'Triceps (no curls today)',items:[
+          {name:'Rope Triceps Pushdown',sr:'3 × 12–15',rest:'—',cue:'Feeds press lockout and keeps the arms. Elbows pinned, smooth full extension. The only elbow work today — biceps get Wednesday.'},
+          {name:'Single-Arm Overhead DB Triceps Ext',sr:'2 × 12 /side',rest:'60s',cue:'✦ Unilateral long-head stretch, seated, DB overhead. Light and controlled.'}]},
+        {type:'ss',label:'Core Finisher',items:[
+          {name:'Pallof Press',sr:'3 × 10–12 /side',rest:'60s',cue:'Anti-rotation — resist the cable twisting you. Ribs down, back-safe brace.'},
+          {name:'Dead Bug',sr:'3 × 10 /side',rest:'45s',cue:'Low back pinned to the floor, slow opposite arm/leg. Anti-extension, zero spinal load.'}]}
+      ]},
+      lowerA:{n:'02',title:'Lower A',tag:'TUE · lower + abs · quad focus · belt-squat anchor · spine-safe',
+        note:'<b>The day between upper sessions.</b> Legs run on maintenance this block — enough to hold what you built, not enough to steal recovery from the delts. Nothing past RPE 8.',
+        groups:[
+        {type:'main',items:[{name:'Belt Squat',sr:'3–4 sets @ %',rest:'2–3 min',cue:'Hip-loaded, zero axial load. Work at the week’s % — TM is an estimate, keep effort ≤ RPE 8. Reuses the TM you saved on the arm block.',calc:'belt',pill:'main'}]},
+        {type:'ss',label:'Superset A',items:[
+          {name:'Bulgarian Split Squat',sr:'3 × 8–10 /leg',rest:'—',cue:'Your favorite. Long stride, knee tracks the toe, control the way down.'},
+          {name:'Single-Leg Seated Leg Curl',sr:'3 × 10–12 /leg',rest:'90s',cue:'✦ Unilateral — one leg on the seated curl, chest on the pad. Pause the squeeze, slow the negative.'}]},
+        {type:'ss',label:'Superset B',items:[
+          {name:'Single-Leg Leg Extension',sr:'3 × 12–15 /leg',rest:'—',cue:'✦ Unilateral — your favorite, one leg at a time. 1-second hold at the top; the weak side can’t hide.'},
+          {name:'Single-Leg Calf Raise',sr:'3 × 12–15 /leg',rest:'60s',cue:'✦ Unilateral — hold a DB in that hand for load. Full stretch, pause at the top.'}]},
+        {type:'ss',label:'Abs',items:[
+          {name:'Cable Crunch',sr:'3 × 15',rest:'60s',cue:'Round down through the abs, hips fixed. Smooth tempo, full squeeze.'},
+          {name:'Plank',sr:'3 × 45–60s',rest:'45s',cue:'Anti-extension hold. Ribs down, glutes tight, spine neutral — don’t let the hips sag.'}]}
+      ]},
+      rear:{n:'03',title:'Rear',tag:'WED · upper · the HEAVY rear-delt day · back width · the ONE elbow day',
+        note:'<b>This is the only heavy biceps day of the week.</b> Elbows get one hard session, then 6 days before the next real one — that’s the whole point. Rear delts are the priority here and get the heaviest work they see all week.',
+        groups:[
+        {type:'main',label:'Rear-delt anchor · straight sets',hint:'full rest',items:[
+          {name:'Chest-Supported High Row (rear-delt bias)',sr:'4 × 8–10',rest:'2–3 min',cue:'The heaviest rear delts get all week. Chest on the incline pad — zero spinal load. Row to the <b>collarbone with the elbows flared ~45° out</b>, NOT to the hips — that flare is what turns a row into rear-delt mass. Load-based, not %: add weight when 4×10 is clean.',pill:'rear'}]},
+        {type:'ss',label:'Rear-Delt Volume · rotates weekly',items:[
+          {name:'Rear Fly — rotates weekly',sr:'3 × 15–20',rest:'—',cue:'<b>Wk 1: Chest-Supported DB Rear Fly (incline bench).</b><br><b>Wk 2: Single-Arm Chest-Supported Rear Fly.</b> ✦ One side at a time, longer pause.<br><b>Wk 3: Prone Incline T-Raise.</b> Thumbs up, straight arms to a T.<br><b>Wk 4: Chest-Supported DB Rear Fly, 3-sec negative.</b><br><b>Wk 5: Single-Arm Chest-Supported Rear Fly.</b> Beat the Wk-2 number.<br>All chest-supported, all straight-ish arms, all light and strict — pure rear delt, nothing on the spine.',pill:'rear'},
+          {name:'Rope Face Pull',sr:'3 × 15–20',rest:'90s',cue:'Second rear-delt angle. Elbows high, pull to the forehead, spread at the end. High reps, constant tension.',pill:'rear'}]},
+        {type:'ss',label:'Cuff + Traps',items:[
+          {name:'Single-Arm Cable External Rotation',sr:'3 × 15 /side',rest:'—',cue:'✦ Unilateral — elbow pinned to the ribs, rotate the forearm out. Rotator-cuff health + rear-delt tie-in; keeps the 3D shoulder honest.',pill:'rear'},
+          {name:'DB Shrug',sr:'3 × 12–15',rest:'90s',cue:'Upper-trap volume for the yoke — DBs at your sides, straight up, pause at the top. No barbell, nothing on the spine.'}]},
+        {type:'ss',label:'Back Width',items:[
+          {name:'Single-Arm Lat Pulldown',sr:'3 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — half-seated and supported, full overhead stretch to the ribs. Width behind the delt work; erases the left/right gap.'}]},
+        {type:'ss',label:'Biceps · the one heavy day',items:[
+          {name:'EZ-Bar / DB Curl',sr:'3 × 8–10',rest:'—',cue:'The single heavy biceps anchor for the week. Micro-load weekly, strict reps, no swing. Everything the elbows need to hold the size you built — without curling three days running.',pill:'bi'},
+          {name:'Single-Arm DB Hammer Curl',sr:'2 × 10–12 /side',rest:'90s',cue:'✦ Unilateral — brachialis = arm thickness, one side at a time so the strong arm can’t carry it. Neutral grip is the elbow-friendliest curl there is.',pill:'bi'}]},
+        {type:'ss',label:'Core Finisher',items:[
+          {name:'Hanging Knee Raise',sr:'3 × 12–15',rest:'60s',cue:'Knees to chest, control the descent — no swing, no spinal load. (Alt: dead bug 3 × 10 /side.)'},
+          {name:'Side Plank',sr:'3 × 30–40s /side',rest:'45s',cue:'Anti-lateral-flexion. Stack the hips, lift tall, hold steady.'}]}
+      ]},
+      lowerB:{n:'04',title:'Lower B',tag:'THU · lower + abs · posterior chain · hams / glutes / calves · spine-safe',
+        note:'<b>The second buffer day.</b> Posterior-chain flavour so it doesn’t just repeat Tuesday. Same rules: RPE ≤ 8, no % table, nothing on the spine.',
+        groups:[
+        {type:'main',label:'Main · mass sets',hint:'full rest',items:[
+          {name:'Belt Squat — Mass Sets',sr:'3 × 10–12',rest:'2–3 min',cue:'Same machine as Tuesday, different job: higher reps, 3-count lowering, smooth drive up, RPE ≤ 8. No %: when every set hits 12 clean, add load and drop back to 10.',pill:'main'}]},
+        {type:'ss',label:'Superset A',items:[
+          {name:'Band-Assisted Nordic Curl',sr:'3 × 6–10',rest:'—',cue:'Kneel on a pad, band from the rig to your chest, hips locked straight. Lower as slow as you can — the eccentric is the mass builder. Spine stays rigid and unloaded. (Too spicy? Slider curls.)'},
+          {name:'Belt Squat Calf Raise',sr:'3 × 12–15',rest:'90s',cue:'Stand tall on the belt squat — heavy calf loading through the hips, zero spinal compression. Toes on a plate, 1-second pause at the top.'}]},
+        {type:'ss',label:'Superset B',items:[
+          {name:'DB Step-Up (box)',sr:'3 × 8–10 /leg',rest:'—',cue:'Knee-height box, DBs at your sides, chest tall. Drive through the top heel, control the way down — quad + glute without a bar near your back.'},
+          {name:'Banded Lateral Walk',sr:'2 × 15 steps /side',rest:'60s',cue:'Band above the knees, stay low, wide steps. Glute med — the stabilizer that keeps knees and hips honest.'}]},
+        {type:'ss',label:'Abs',items:[
+          {name:'McGill Curl-Up',sr:'3 × 5 /side',rest:'—',cue:'Hands under the low back, one knee bent — curl the sternum up, neck neutral. The back-surgeon-approved crunch.'},
+          {name:'Side Plank + Reach',sr:'3 × 20–30s /side',rest:'45s',cue:'Side plank with a slow reach-through and open. Anti-lateral-flexion plus a little rotation control.'}]}
+      ]},
+      vol:{n:'05',title:'Volume',tag:'FRI · upper · 3D delt pump · a DIFFERENT press angle · rear-delt heavy',
+        note:'<b>Start small, build slow.</b> Weeks 1–2: <b>2 sets</b> per movement, no Pump Finisher. Week 3+: full 3 sets + finisher. Nothing past RPE 8. Today’s press is a <b>high-incline</b> — a different angle than Monday’s vertical press on purpose, not the same lift twice.',
+        groups:[
+        {type:'main',label:'Top press · different angle · double progression',hint:'full rest',items:[
+          {name:'High-Incline DB Press (~60°)',sr:'3 × 10–12',rest:'2–3 min',cue:'Bench set high but not vertical — this hits the front delt with an upper-chest tie-in, a genuinely different stimulus than Monday’s neutral-grip/landmine vertical press. No % here: when every set hits 12 clean, take the next DBs up and drop back to 10. Back fully supported.',pill:'main'}]},
+        {type:'ss',label:'Rear-Delt Double',items:[
+          {name:'Chest-Supported DB Rear Fly',sr:'3 × 15–20',rest:'—',cue:'Third rear-delt session of the week. Strict, paused, light. Squeeze and hold a beat at the back.',pill:'rear'},
+          {name:'Band Pull-Apart (or Rope Face Pull)',sr:'3 × 20–25',rest:'90s',cue:'High-rep metabolite work for the rear delts and upper back. Squeeze the blades, no traps.',pill:'rear'}]},
+        {type:'ss',label:'Side-Delt Width',items:[
+          {name:'DB Lateral Raise + top partials',sr:'3 × 12–15 + partials',rest:'—',cue:'Full reps to the cap, then pulse the top third till it burns. Side delts respond to time under tension.',pill:'side'},
+          {name:'Single-Arm Cable Lateral (lean-away)',sr:'3 × 15 /side',rest:'90s',cue:'✦ Unilateral — long arc, constant tension. Even out the width side to side.',pill:'side'}]},
+        {type:'ss',label:'Upper Delt + Traps',items:[
+          {name:'Chest-Supported DB Y-Raise',sr:'3 × 12–15',rest:'—',cue:'Chest down on the low-incline bench, light DBs, thumbs up, raise to a Y. Upper delts + lower traps, spine fully supported. Light is right.'},
+          {name:'Rope Triceps Pushdown',sr:'2 × 15',rest:'60s',cue:'Light triceps pump to close the pressing. Easy on the elbow — no heavy extensions today.'}]},
+        {type:'ss',label:'Biceps · light &amp; optional',items:[
+          {name:'Cable / DB Curl — light',sr:'2 × 15–20',rest:'60s',cue:'<b>Optional pump only</b>, and the second (last) elbow session of the week — 2 days after Wednesday’s heavy curls, never back-to-back. Light, constant tension, 4+ reps left in the tank. <b>If the elbows are barking at all, skip this entirely</b> — you lose nothing.',pill:'bi'}]},
+        {type:'ss',label:'Pump Finisher (wk 3+)',items:[
+          {name:'Lateral Raise Burnout',sr:'2 × 20–25',rest:'—',cue:'Light DBs, strict-ish, go till the side delts quit. Short rest.',pill:'side'},
+          {name:'Rear Fly Burnout',sr:'2 × 20–25',rest:'60s',cue:'Finish where we started — rear delts. Light, fast squeeze, chase the burn.',pill:'rear'}]},
+        {type:'ss',label:'Core Finisher',items:[
+          {name:'Bird Dog',sr:'3 × 8 /side',rest:'—',cue:'Slow and square — hips level, reach long. Back-safe stability.'},
+          {name:'Hanging Leg Raise',sr:'3 × 12–15',rest:'45s',cue:'Controlled flexion, no load on the spine. Lower slow — no swing.'}]}
+      ]}
+    },
+    plan:`
+<div class="pcard"><h3>The week — upper / lower alternating</h3>
+<div class="arc">
+<div class="a"><div class="w">Mon</div><div class="x"><b>Press</b> — upper. Rotating press anchor, side + rear delts, triceps. <b>No curls.</b></div></div>
+<div class="a"><div class="w">Tue</div><div class="x"><b>Lower A</b> — quads + abs. Belt-squat anchor.</div></div>
+<div class="a"><div class="w">Wed</div><div class="x"><b>Rear</b> — upper. The heavy rear-delt day <b>and the one heavy elbow day.</b></div></div>
+<div class="a"><div class="w">Thu</div><div class="x"><b>Lower B</b> — posterior chain + abs.</div></div>
+<div class="a"><div class="w">Fri</div><div class="x"><b>Volume</b> — upper. Delt pump on a different press angle. Optional light curls.</div></div>
+<div class="a"><div class="w">Sat / Sun</div><div class="x">Off, or an easy PM add-on.</div></div>
+</div>
+<div class="gd" style="margin-top:12px"><b>Never two upper days back to back.</b> A lower day always sits between them — the shoulders get 48h every time, which is what actually lets the delt volume land.</div>
+</div>
+
+<div class="pcard"><h3>Press rotation — variety <i>and</i> linear progression</h3>
+<div class="arc">
+<div class="a"><div class="w">Wks 1–2</div><div class="x"><b>A · Seated Neutral-Grip DB Press</b> — 70% → 74%. Shoulder-friendliest vertical press.</div></div>
+<div class="a"><div class="w">Wks 3–4</div><div class="x"><b>B · Seated Landmine Press</b> — 77% → 80%. Angled arc, barbell load, never over the spine.</div></div>
+<div class="a"><div class="w">Wk 5</div><div class="x"><b>A · peak</b> — 83% × 4. Same lift as Week 1, so the PR is a real, measurable comparison.</div></div>
+<div class="a"><div class="w">Why waves</div><div class="x">Two weeks is long enough to actually progress a lift, short enough that you never grind the same groove for a month. The <b>% climbs every single week</b> — that’s the linear progression — while the implement changes underneath it.</div></div>
+<div class="a"><div class="w">Friday</div><div class="x">A <b>high-incline DB press</b>, not the Monday lift again — different angle, different rep range, no % table.</div></div>
+<div class="a"><div class="w">Accessories</div><div class="x">Laterals and rear flyes <b>rotate weekly</b> (see the day cards), with Wk 5 repeating a Wk-2 movement so there’s a number to beat.</div></div>
+</div></div>
+
+<div class="pcard"><h3>Elbow &amp; arm policy</h3>
+<div class="gd"><b>One heavy biceps day: Wednesday.</b> That’s it. Three curl days back-to-back is how tendons get angry — especially on a block where you’re already pressing three times a week.</div>
+<div class="gd"><b>Friday’s curls are light and optional</b> — 2 days after Wednesday, never adjacent. Elbows twinge? Skip them, lose nothing.</div>
+<div class="gd"><b>Triceps</b> get one real session (Mon) plus a light pump (Fri) — the pressing already does most of the work.</div>
+<div class="gd">Arms are on <b>maintenance</b> this block by design. You built them last cycle; you only need enough to hold them while the delts take the spotlight.</div>
+</div>
+
+<div class="pcard"><h3>Rear-delt playbook</h3>
+<div class="gd"><b>Trained every upper day</b> — heavy rows Wed, flyes and face pulls Mon/Fri. ~20 sets/week, the leading volume in the block.</div>
+<div class="gd"><b>Row with the flare.</b> Elbows ~45° out, row to the collarbone not the hips — that angle builds rear delts instead of lats.</div>
+<div class="gd"><b>Chest-supported and cable/band only</b> — no machine required, nothing that loads the spine. An incline bench, a rope and a band cover every rear-delt movement in this block.</div>
+<div class="gd"><b>Don’t let the traps steal it.</b> Ribs down, lead with the elbow, neck long. Feel it in the upper traps? Drop the weight.</div>
+</div>
+
+<div class="pcard"><h3>5-week arc</h3>
+<div class="arc">
+<div class="a"><div class="w">Week 1</div><div class="x"><b>Ramp-in.</b> Press at 70%, delt volume at 2 sets. Re-groove, feel the rear delts.</div></div>
+<div class="a"><div class="w">Wk 2–4</div><div class="x"><b>Climb.</b> % up every week, press variation swaps at Wk 3, volume opens to full sets + finisher from Wk 3.</div></div>
+<div class="a"><div class="w">Week 5</div><div class="x"><b>Peak.</b> Back to variation A for a measurable top set; volume trimmed so the shoulders look full and fresh.</div></div>
+</div></div>
+
+<div class="pcard"><h3>Back &amp; surgery guardrails</h3>
+<div class="gd"><b>No axial loading.</b> Belt squat (hip-loaded), seated / chest-supported everything, <b>no barbell overhead</b> — the landmine loads a bar without ever putting it over your spine.</div>
+<div class="gd"><b>Week 1 is a ramp</b>, non-negotiable. Respect your surgical clearance before pushing the press.</div>
+<div class="gd">If sleep, joints, or the surgical site flag for ~3+ days, <b>insert a deload</b> (half the sets, ~60% load) and resume.</div>
+<div class="gd">A training template, <b>not medical advice</b> — clear the return-to-loading and overhead-press timeline with Dr. Cole before Week 1.</div>
+</div>`,
+    nav:[
+      {t:'press', ico:'S',  lb:'Press', c:'push2'},
+      {t:'lowerA',ico:'L',  lb:'Low A', c:'legs'},
+      {t:'rear',  ico:'R',  lb:'Rear',  c:'pull'},
+      {t:'lowerB',ico:'L²', lb:'Low B', c:'legs2'},
+      {t:'vol',   ico:'V',  lb:'Volume',c:'pm'},
+      {t:'plan',  ico:'★',  lb:'Plan',  c:'ember2'}
+    ],
+    subs:{press:'Mon · rotating press · side + rear delts',lowerA:'Tue · quads + abs · the buffer day',rear:'Wed · heavy rear delts · the one elbow day',lowerB:'Thu · posterior chain + abs',vol:'Fri · delt pump · different press angle',plan:'The 5-week delt block game plan'}
+  }
+};
+
+let ACTIVE=CYCLES['arm-bicep'];
+let activeTab=null;
+
+/* --- Training Max persistence (per-lift, per device) --- */
+function tmKey(id){return 'blazePPL.tm.'+id;}
+function tmGet(id){try{return localStorage.getItem(tmKey(id));}catch(e){return null;}}
+function tmSet(id,v){try{(v&&parseFloat(v)>0)?localStorage.setItem(tmKey(id),v):localStorage.removeItem(tmKey(id));}catch(e){}
+  try{if(typeof queuePatch==='function')queuePatch('tm',id,{v:(v===''?null:parseFloat(v)),ts:nowTs()});}catch(e){}}
+function tmStatus(c){
+  const v=c.querySelector('.tm').value, st=c.querySelector('.tmstatus'), clr=c.querySelector('.tmclear');
+  if(v&&parseFloat(v)>0){st.textContent='✓ Saved on this device';st.classList.add('saved');clr.classList.add('show');}
+  else{st.textContent='Saves on this device';st.classList.remove('saved');clr.classList.remove('show');}
+}
+function wireCalcs(){
+  document.querySelectorAll('.calc').forEach(c=>{
+    const id=c.dataset.calc, tm=c.querySelector('.tm');
+    let saved=tmGet(id);
+    try{const rem=LOG.tm&&LOG.tm[id];if(rem&&rem.v!=null)saved=String(rem.v);}catch(e){}   // server wins if present
+    if(saved!==null&&saved!==undefined)tm.value=saved;
+    renderWeeks(c); tmStatus(c);
+    tm.addEventListener('input',()=>{tmSet(id,tm.value);renderWeeks(c);tmStatus(c);});
+    c.querySelector('.ew').addEventListener('input',()=>renderEst(c));
+    c.querySelector('.er').addEventListener('input',()=>renderEst(c));
+    c.querySelector('.use').addEventListener('click',()=>{
+      if(c._suggest){tm.value=c._suggest;tmSet(id,tm.value);renderWeeks(c);tmStatus(c);c.querySelector('details').open=false;}
+    });
+    c.querySelector('.tmclear').addEventListener('click',()=>{tm.value='';tmSet(id,'');renderWeeks(c);tmStatus(c);tm.focus();});
+  });
+}
+
+/* --- render a whole cycle: header + views + bottom nav --- */
+function buildCycle(id){
+  const cy=CYCLES[id]; if(!cy)return;
+  ACTIVE=cy;
+  document.getElementById('cycleTag').innerHTML=cy.tag;
+  document.getElementById('weekBadge').textContent=cy.badge;
+  document.getElementById('cycleName').textContent=cy.name;
+
+  let vh='';
+  cy.nav.forEach(n=>{ vh+=`<section class="view" id="v-${n.t}">${n.t==='plan'?(cy.plan||''):renderDay(n.t)}</section>`; });
+  vh+=`<section class="view" id="v-pm">${PM}</section>`;   // PM is shared across cycles
+  document.getElementById('main').innerHTML=vh;
+
+  const nav=document.getElementById('nav');
+  nav.innerHTML=cy.nav.map(n=>
+    `<button data-t="${n.t}" style="--tabc:var(--${n.c})"><span class="ico">${n.ico}</span><span class="lb">${n.lb}</span></button>`
+  ).join('')+
+    `<button class="menu-btn" data-menu="1" style="--tabc:var(--pm)"><span class="ico">☰</span><span class="lb">Cycles</span></button>`;
+  nav.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',()=>{ b.dataset.menu?openSheet():selectTab(b.dataset.t); });
+  });
+
+  wireCalcs();
+  wireLogs();
+  selectTab(cy.nav[0].t);
+}
+
+/* --- switch the visible day / plan / pm view --- */
+function selectTab(t){
+  activeTab=t;
+  document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='v-'+t));
+  document.documentElement.style.setProperty('--accent', ACCENT[t]||ACTIVE.color||'var(--ember2)');
+  const sub = t==='pm' ? 'Optional afternoon add-ons · bonus only'
+            : (ACTIVE.subs&&ACTIVE.subs[t]) || ACTIVE.sub;
+  document.getElementById('dsub').textContent=sub;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* --- cycle switcher sheet / drawer --- */
+function buildSwitcher(){
+  const list=document.getElementById('cycList');
+  document.querySelector('.sheet-title').textContent='Cycle Library';
+  document.querySelector('.sheet-sub').textContent='Choose a training focus';
+  list.innerHTML=Object.values(CYCLES).map(cy=>{
+    const on=cy.id===ACTIVE.id?'on':'';
+    const badge=cy.draft?'<span class="cyc-badge draft">Draft</span>'
+              : (cy.id===ACTIVE.id?'<span class="cyc-badge active">Active</span>':'');
+    return `<button class="cyc ${on}" data-cyc="${cy.id}" type="button" style="--cc:${cy.color}">
+      <div class="cyc-ic">${cy.tag.slice(0,2)}</div>
+      <div class="cyc-tx"><div class="cyc-n">${cy.name}${badge}</div><div class="cyc-f">${cy.focus}</div></div>
+      <div class="cyc-go">›</div>
+    </button>`;
+  }).join('');
+  list.querySelectorAll('.cyc').forEach(b=>{
+    b.addEventListener('click',()=>{ buildCycle(b.dataset.cyc); closeSheet(); });
+  });
+}
+function openSheet(){ buildSwitcher(); document.getElementById('sheet').hidden=false; }
+function closeSheet(){ document.getElementById('sheet').hidden=true; }
+
+document.getElementById('cycSwitch').addEventListener('click',openSheet);
+document.querySelectorAll('#sheet [data-close]').forEach(el=>el.addEventListener('click',closeSheet));
+document.querySelector('#sheet .cyc.extra').addEventListener('click',()=>{ selectTab('pm'); closeSheet(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeSheet(); });
+
+/* ============================================================
+   TRAINING LOG + CROSS-DEVICE SYNC
+   Local-first: every entry saves to this device instantly, then
+   syncs to log-api.php (data lives outside the web root, PIN-gated).
+   Works fully offline; queued changes flush when you're back.
+   ============================================================ */
+const API_URL='log-api.php';
+const LSK={pin:'blazeLog.pin',cache:'blazeLog.cache',queue:'blazeLog.queue'};
+let LOG={cycles:{},tm:{},sessions:{}};
+let PENDING={sessions:{},cycles:{},tm:{}};
+let pushTimer=null;
+
+function lsGet(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function getPin(){try{return localStorage.getItem(LSK.pin)||'';}catch(e){return'';}}
+function setPinLocal(p){try{p?localStorage.setItem(LSK.pin,p):localStorage.removeItem(LSK.pin);}catch(e){}}
+
+function slugify(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'ex';}
+function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function nowTs(){return Math.floor(new Date().getTime()/1000);}
+function setCount(sr){const m=/^(\d+)\s*(?:sets?|×|x)/i.exec(String(sr||''));return m?Math.max(1,Math.min(6,parseInt(m[1],10))):3;}
+function normLog(l){l=l||{};return{cycles:l.cycles||{},tm:l.tm||{},sessions:l.sessions||{}};}
+
+/* ---------- sync status pill ---------- */
+function setSync(state,label){
+  const el=document.getElementById('syncPill'); if(!el)return;
+  el.className='syncpill '+state;
+  const txt={ok:'Synced',sync:'Syncing',off:'Offline',auth:'Sign in',local:'This device'}[state]||state;
+  el.querySelector('.stx').textContent=label||txt;
+}
+
+async function api(action,body){
+  const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(Object.assign({action:action,pin:getPin()},body||{}))});
+  let j={}; try{j=await res.json();}catch(e){}
+  if(!res.ok||!j.ok){const err=new Error(j.error||('http '+res.status));err.status=res.status;throw err;}
+  return j;
+}
+
+async function syncPull(){
+  LOG=normLog(lsGet(LSK.cache,null));            // show cached data instantly
+  PENDING=lsGet(LSK.queue,{sessions:{},cycles:{},tm:{}});
+  if(!getPin()){setSync('auth');refreshAllLogUI();return;}
+  setSync('sync');
+  try{
+    const j=await api('get');
+    LOG=normLog(j.log); lsSet(LSK.cache,LOG); setSync('ok');
+    if(Object.keys(PENDING.sessions).length||Object.keys(PENDING.cycles).length||Object.keys(PENDING.tm).length) doPush();
+  }catch(e){ setSync(e.status===401?'auth':'off'); }
+  refreshAllLogUI();
+}
+
+function queuePatch(part,key,val){
+  PENDING[part][key]=val; LOG[part][key]=val;
+  lsSet(LSK.queue,PENDING); lsSet(LSK.cache,LOG);
+  clearTimeout(pushTimer); pushTimer=setTimeout(doPush,1200);
+}
+
+async function doPush(){
+  if(!getPin()){setSync('auth');return;}
+  const empty=!Object.keys(PENDING.sessions).length&&!Object.keys(PENDING.cycles).length&&!Object.keys(PENDING.tm).length;
+  if(empty)return;
+  setSync('sync');
+  const sending=JSON.parse(JSON.stringify(PENDING));
+  try{
+    const j=await api('put',{patch:sending});
+    LOG=normLog(j.log);
+    for(const p of ['sessions','cycles','tm']) for(const k in sending[p]) if(PENDING[p][k]===sending[p][k]) delete PENDING[p][k];
+    lsSet(LSK.queue,PENDING); lsSet(LSK.cache,LOG); setSync('ok');
+  }catch(e){ setSync(e.status===401?'auth':'off'); }   // stays queued for next time
+}
+
+/* ---------- week tracker ---------- */
+function cycleWeek(cid){const c=LOG.cycles[cid];const n=c&&parseInt(c.week,10);return (n&&n>0)?n:1;}
+function setCycleWeek(cid,w){
+  queuePatch('cycles',cid,{week:w,ts:nowTs()});
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.w,10)===w));
+  document.querySelectorAll('.calc').forEach(renderWeeks);   // re-highlight the % table
+}
+function weekBarHTML(cy){
+  const n=cy.calc&&Object.keys(cy.calc).length?(cy.calc[Object.keys(cy.calc)[0]].weeks.length):(cy.weeks||8);
+  const cur=cycleWeek(cy.id); let b='';
+  for(let i=1;i<=n;i++) b+=`<button class="wbtn${i===cur?' on':''}" data-w="${i}" type="button">${i}</button>`;
+  return `<div class="wkbar"><span class="wl">Week</span><div class="wsel">${b}</div></div>`;
+}
+
+/* ---------- per-exercise set log ---------- */
+function sessionKey(dayKey){return todayKey()+'|'+ACTIVE.id+'|'+dayKey;}
+function logHTML(e,dayKey){
+  const id=slugify(e.name), n=setCount(e.sr);
+  let rows='<div class="sethead"><span>Set</span><span>Weight</span><span></span><span>Reps</span></div>';
+  for(let i=0;i<n;i++){
+    rows+=`<div class="setrow"><span class="sn">${i+1}</span>`+
+      `<input class="lw" data-i="${i}" type="number" inputmode="decimal" placeholder="lb">`+
+      `<span class="x">×</span>`+
+      `<input class="lr" data-i="${i}" type="number" inputmode="numeric" placeholder="reps"></div>`;
+  }
+  return `<details class="logbox" data-ex="${id}" data-day="${dayKey}">
+    <summary>Log sets<span class="last"></span></summary>
+    ${rows}
+    <input class="lognote" type="text" placeholder="Note (optional) — how it felt, RPE, tweaks…">
+    <div class="logmeta"><span class="st"></span></div>
+  </details>`;
+}
+
+function lastEntry(exId,dayKey){
+  const today=sessionKey(dayKey); let best=null,bestKey='';
+  for(const k in LOG.sessions){
+    const p=k.split('|');
+    if(p[1]!==ACTIVE.id||p[2]!==dayKey||k===today) continue;
+    const s=LOG.sessions[k]; if(!s.ex||!s.ex[exId]) continue;
+    if(!best||k>bestKey){best=s;bestKey=k;}
+  }
+  if(!best)return null;
+  return {date:bestKey.split('|')[0],week:best.week,sets:best.ex[exId]};
+}
+
+function paintLogBox(box){
+  const exId=box.dataset.ex, dayKey=box.dataset.day;
+  const sess=LOG.sessions[sessionKey(dayKey)];
+  const mine=sess&&sess.ex?sess.ex[exId]:null;
+  box.querySelectorAll('.setrow').forEach((row,i)=>{
+    const w=row.querySelector('.lw'), r=row.querySelector('.lr');
+    const rec=mine&&mine[i];
+    if(rec&&document.activeElement!==w) w.value=(rec.w??'');
+    if(rec&&document.activeElement!==r) r.value=(rec.r??'');
+    w.classList.toggle('filled',!!w.value); r.classList.toggle('filled',!!r.value);
+  });
+  const note=box.querySelector('.lognote');
+  if(sess&&sess.notes&&sess.notes[exId]!=null&&document.activeElement!==note) note.value=sess.notes[exId];
+  const prev=lastEntry(exId,dayKey), lab=box.querySelector('.last');
+  if(mine&&mine.some(s=>s&&(s.w||s.r))) lab.innerHTML='<b>logged today</b>';
+  else if(prev) lab.innerHTML='last <b>'+prev.sets.filter(s=>s&&s.w).map(s=>s.w+'×'+(s.r||'?')).join(', ')+'</b>';
+  else lab.textContent='';
+}
+function refreshAllLogUI(){
+  document.querySelectorAll('.logbox').forEach(paintLogBox);
+  const cur=cycleWeek(ACTIVE.id);
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.w,10)===cur));
+  document.querySelectorAll('.calc').forEach(renderWeeks);
+}
+
+function saveLogBox(box){
+  const exId=box.dataset.ex, dayKey=box.dataset.day, key=sessionKey(dayKey);
+  const sess=Object.assign({ts:0,week:cycleWeek(ACTIVE.id),ex:{},notes:{}},LOG.sessions[key]||{});
+  sess.ex=Object.assign({},sess.ex); sess.notes=Object.assign({},sess.notes||{});
+  const sets=[];
+  box.querySelectorAll('.setrow').forEach(row=>{
+    const w=row.querySelector('.lw').value, r=row.querySelector('.lr').value;
+    sets.push({w:w===''?null:parseFloat(w),r:r===''?null:parseInt(r,10)});
+    row.querySelector('.lw').classList.toggle('filled',w!=='');
+    row.querySelector('.lr').classList.toggle('filled',r!=='');
+  });
+  if(sets.some(s=>s.w!==null||s.r!==null)) sess.ex[exId]=sets; else delete sess.ex[exId];
+  const note=box.querySelector('.lognote').value.trim();
+  if(note) sess.notes[exId]=note; else delete sess.notes[exId];
+  sess.ts=nowTs(); sess.week=cycleWeek(ACTIVE.id);
+  queuePatch('sessions',key,sess);
+  const st=box.querySelector('.st'); st.textContent='✓ Saved'; st.classList.add('saved');
+  clearTimeout(box._t); box._t=setTimeout(()=>{st.textContent='';st.classList.remove('saved');},1800);
+}
+
+function wireLogs(){
+  document.querySelectorAll('.logbox').forEach(box=>{
+    paintLogBox(box);
+    box.querySelectorAll('input').forEach(inp=>{
+      inp.addEventListener('input',()=>{clearTimeout(box._s);box._s=setTimeout(()=>saveLogBox(box),500);});
+      inp.addEventListener('blur',()=>saveLogBox(box));
+    });
+  });
+  document.querySelectorAll('.wkbar .wbtn').forEach(b=>b.addEventListener('click',()=>setCycleWeek(ACTIVE.id,parseInt(b.dataset.w,10))));
+}
+
+/* ---------- PIN / device pairing ---------- */
+function pinDialogHTML(configured){
+  return `<div class="pinwrap">
+    <p>${configured
+      ? 'Enter your training-log PIN to sync this device. Your log lives on your own server — nothing is stored with anyone else.'
+      : 'First-time setup. Enter the <b>setup token</b> from your server plus a PIN you\\u2019ll use on every device.'}</p>
+    <div class="pinmsg" id="pinMsg"></div>
+    ${configured?'':'<label>Setup token</label><input id="pinToken" type="text" autocomplete="off" placeholder="one-time token">'}
+    <label>PIN</label><input id="pinInput" type="password" inputmode="numeric" autocomplete="off" placeholder="your PIN">
+    <button class="pinbtn" id="pinGo" type="button">${configured?'Connect this device':'Create log'}</button>
+    ${getPin()?'<button class="pinbtn ghost" id="pinOut" type="button">Disconnect this device</button>':''}
+  </div>`;
+}
+async function openPin(){
+  let configured=true;
+  try{const r=await fetch(API_URL);const j=await r.json();configured=!!j.configured;}catch(e){}
+  const list=document.getElementById('cycList');
+  document.getElementById('sheet').hidden=false;
+  list.innerHTML=pinDialogHTML(configured);
+  document.querySelector('.sheet-title').textContent='Training Log';
+  document.querySelector('.sheet-sub').textContent=configured?'Sync this device':'First-time setup';
+  const msg=document.getElementById('pinMsg');
+  const go=document.getElementById('pinGo');
+  go.addEventListener('click',async()=>{
+    const pin=document.getElementById('pinInput').value.trim();
+    if(pin.length<4){msg.className='pinmsg err';msg.textContent='PIN must be at least 4 characters.';return;}
+    setPinLocal(pin); msg.className='pinmsg'; msg.textContent='Working…';
+    try{
+      if(!configured){
+        const tok=document.getElementById('pinToken').value.trim();
+        await api('setup',{token:tok});
+      }
+      await api('get');
+      msg.className='pinmsg ok'; msg.textContent='✓ Connected. Syncing…';
+      await syncPull();
+      setTimeout(closeSheet,700);
+    }catch(e){
+      setPinLocal('');
+      msg.className='pinmsg err';
+      msg.textContent=e.status===401?'Wrong PIN.':e.status===403?'Bad or missing setup token.':('Could not connect: '+e.message);
+      setSync('auth');
+    }
+  });
+  const out=document.getElementById('pinOut');
+  if(out) out.addEventListener('click',()=>{setPinLocal('');setSync('auth');closeSheet();});
+}
+
+/* --- boot --- */
+document.getElementById('syncPill').addEventListener('click',openPin);
+LOG=normLog(lsGet(LSK.cache,null));
+PENDING=lsGet(LSK.queue,{sessions:{},cycles:{},tm:{}});
+buildCycle('arm-bicep');
+syncPull();
+window.addEventListener('online',()=>doPush());
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncPull();});
+</script>
+</body>
+</html>
